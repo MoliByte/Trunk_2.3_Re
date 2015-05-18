@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" 
+	android:padding="10dp"
+	android:background="@color/title_back_color">
+	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亲爱的小主，我们珍视你的每一个反馈以及每个护肤疑问，你的建议、批评以及护肤心得将是对管家君莫大的支持，是我们对产品优化改造的方向和动力!"
+            android:textColor="#898989"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="-------肌肤管家全体员工"
+            android:textColor="#999"
+            android:textSize="14sp" />
+</LinearLayout>

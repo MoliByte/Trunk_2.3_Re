@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <!-- 广告ViewPage -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="160dp" >
+
+        <com.base.gifview.GifMovieView
+	        xmlns:custom="http://schemas.android.com/apk/res-auto"
+	        android:id="@+id/home_data_loading"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center" 
+	        custom:gif="@drawable/loading"
+	         />
+
+        <com.app.custom.view.CustomizedGallery
+            android:id="@+id/infoshow_gallery"
+            android:layout_width="fill_parent"
+            android:layout_height="160dip"
+            android:scrollbars="none" />
+
+        <GridView
+            android:id="@+id/infoshow_gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:cacheColorHint="#00000000"
+            android:listSelector="#00000000"
+            android:stretchMode="none" />
+        
+    </FrameLayout>
+
+   <!-- 水油弹 -->
+
+    <LinearLayout
+        android:id="@+id/lineTestData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="今日\n测试"
+            android:textColor="@color/title_bg"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_water" />
+
+            <TextView
+                android:id="@+id/tv_main_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="10dp"
+                android:text="0%"
+                android:textColor="@color/test_water_num"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_oil" />
+
+            <TextView
+                android:id="@+id/tv_main_oil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="10dp"
+                android:text="0%"
+                android:textColor="@color/test_oil_num"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_flexible" />
+
+            <TextView
+                android:id="@+id/tv_main_flexible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="10dp"
+                android:text="0.0"
+                android:textColor="@color/test_flex_num"
+                android:textSize="20sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

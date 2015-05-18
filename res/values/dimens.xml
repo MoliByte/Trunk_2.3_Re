@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 侧滑菜单 -->
+    <dimen name="slidingmenu_offset">100dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+
+    <!-- 下拉刷新listView -->
+    <dimen name="font_xlistView_size">14sp</dimen>
+
+    <!-- 标题栏高度 -->
+    <dimen name="top_bar_height">45dp</dimen>
+    
+    <!-- 返回按钮高度 -->
+    <dimen name="back_button_height">30dp</dimen>
+     <!-- 返回按钮宽度-->
+    <dimen name="back_button_width">40dp</dimen>
+     <!-- 返回间距-->
+    <dimen name="back_button_padding">6dp</dimen>
+    
+
+    <!-- 提交按钮高度 -->
+    <dimen name="submit_button_height">48dp</dimen>
+
+    <!-- 内容内边距 -->
+    <dimen name="content_padding_left">20dp</dimen>
+    <dimen name="content_padding_right">20dp</dimen>
+
+    <!-- 高度 -->
+    <dimen name="item_height">48dp</dimen>
+    <dimen name="item_width">70dp</dimen>
+
+    <!-- RectView 矩形边框宽度 -->
+    <dimen name="box_line_width">1dp</dimen>
+
+    <!-- splash -->
+    <dimen name="splash_point_size">8dp</dimen>
+    <dimen name="splash_point_marginLeft">5dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- 环信 -->
+    <dimen name="height_top_bar">46dp</dimen>
+    <dimen name="padding_search_bar">5dp</dimen>
+    <dimen name="height_row_weixin">59dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="field_textsize">14sp</dimen>
+    <dimen name="field_margin_right">5dp</dimen>
+    <dimen name="call_button_padding_vertical">10dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="call_button_padding_right">25dp</dimen>
+    <dimen name="sidebar_text_size">10dp</dimen>
+     <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    
+<!-- 首页报表宽高 -->
+    <dimen name="chart_width">220dp</dimen>
+    <dimen name="chart_height">35dp</dimen>
+    
+    <!-- padding -->
+    <dimen name="padding_small">3dip</dimen>
+    <dimen name="padding_medium">5dip</dimen>
+    <dimen name="padding_large">8dip</dimen>
+    <dimen name="padding_xlarger">10dip</dimen>
+
+    <!-- spacing -->
+    <dimen name="spacing_small">3dip</dimen>
+    <dimen name="spacing_medium">5dip</dimen>
+    <dimen name="spacing_large">8dip</dimen>
+
+    <!-- margin -->
+
+
+    <!-- other -->
+    <dimen name="group_item_image_heght">150dip</dimen>
+    <dimen name="group_list_item_image_heght">100dip</dimen>
+    <dimen name="group_item_tips_heght">30dip</dimen>
+</resources>

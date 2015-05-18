@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@drawable/text_bg" >
+
+        <!-- 返回按钮 -->
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/back_image"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="我的美容导师"
+             />
+
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true" >
+
+            <!-- 添加导师按钮 -->
+
+            <ImageView
+                android:id="@+id/add_master"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/add_master_2" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.base.pulltorefresh.view.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myMaster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+          android:listSelector="#00000000" 
+        android:divider="#19000000"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawableEnd="@drawable/refresh_ptr_flip_gray"
+        ptr:ptrDrawableStart="@drawable/refresh_ptr_flip_gray"
+        ptr:ptrHeaderBackground="#c3c3c5"
+        ptr:ptrHeaderSubTextColor="#000"
+        ptr:ptrHeaderTextColor="#000"
+        ptr:ptrMode="both" />
+
+</LinearLayout>

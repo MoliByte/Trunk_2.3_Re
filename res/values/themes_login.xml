@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- login activity, register activity -->
+    <style name="login_to_register_btn">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@drawable/button_selector</item>
+    </style>
+
+    <dimen name="login_content_padding_left">@dimen/content_padding_left</dimen>
+    <dimen name="login_content_padding_right">@dimen/content_padding_right</dimen>
+
+    <style name="login_item_line">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:background">@drawable/edit_box_selector</item>
+    </style>
+
+
+    <style name="login_forgetPassword">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/main_font_60</item>
+    </style>
+
+    <!-- register activity -->
+    <style name="reg_mobileNo_line">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:background">@drawable/edit_box_selector</item>
+    </style>
+
+    <style name="reg_tip_txt">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/main_font_60</item>
+    </style>
+
+    <!--submit register activity-->
+    <style name="reg_password_line">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:background">@drawable/edit_box_selector</item>
+    </style>
+
+    <style name="reg_verifyCode_line">
+        <item name="android:layout_marginLeft">@dimen/login_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/login_content_padding_right</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/edit_box_selector</item>
+    </style>
+
+</resources>

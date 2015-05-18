@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="product_activity_background">#fffbf7f7</color>
+
+    <style name="product_nav_style">
+        <item name="android:background">#ffffd4e8</item>
+    </style>
+
+
+    <style name="product_title_bar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="product_cate_item_style">
+
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@null</item>
+        <item name="android:background">@drawable/product_cate_selector</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/product_cate_selector</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+
+    </style>
+</resources>

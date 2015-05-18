@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   	android:id="@+id/root_article_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color" >
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/back_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/back_button_padding"
+            android:layout_height="match_parent" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+        <!-- 分享按钮 -->
+
+        <ImageView
+            android:id="@+id/popupShareBtn"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_selector"
+            android:src="@drawable/share_icon_60" />
+         <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:background="#FFFFFF"
+        android:orientation="vertical" >
+
+        <com.base.pulltorefresh.view.PullToRefreshListView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/article_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:listSelector="#00000000" 
+            android:divider="#19000000"
+            android:dividerHeight="0dp"
+            android:fadingEdge="none"
+            android:scrollbars="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:smoothScrollbar="false"
+            ptr:ptrAnimationStyle="flip"
+            ptr:ptrDrawableEnd="@drawable/refresh_ptr_flip"
+            ptr:ptrDrawableStart="@drawable/refresh_ptr_flip"
+            ptr:ptrHeaderBackground="#fff"
+            ptr:ptrHeaderSubTextColor="@color/title_bg"
+            ptr:ptrHeaderTextColor="@color/title_bg"
+            android:layout_marginBottom="40dp"
+            ptr:ptrMode="both" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" >
+
+            <include layout="@layout/read_comment_send_message" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

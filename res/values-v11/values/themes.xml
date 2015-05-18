@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme">
+        <item name="android:windowBackground">@drawable/startupbitmap</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- 自定义对话框 -->
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/background_320_100</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 自定义对话框 -->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <!-- 扫描二维码activity 样式 -->
+    <style name="CaptureTheme" parent="@style/android:Theme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- share menu item -->
+    <style name="ShareItemTheme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@null</item>
+        <item name="android:drawableTop">@null</item>
+
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+    </style>
+
+    <style name="QQItemTheme" parent="ShareItemTheme">
+        <item name="android:drawableTop">@drawable/icon_qq_friend</item>
+    </style>
+
+    <style name="WXItemTheme" parent="ShareItemTheme">
+        <item name="android:drawableTop">@drawable/icon_wx_h</item>
+    </style>
+
+    <style name="WXBItemTheme" parent="ShareItemTheme">
+        <item name="android:drawableTop">@drawable/icon_wx_b</item>
+    </style>
+
+    <style name="SMItemTheme" parent="ShareItemTheme">
+        <item name="android:drawableTop">@drawable/icon_mail</item>
+    </style>
+
+    <style name="WBItemTheme" parent="ShareItemTheme">
+        <item name="android:drawableTop">@drawable/icon_sina_wb</item>
+    </style>
+
+    <!-- back button -->
+    <style name="back_btn">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="title_bar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/main_font_80</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="back_image">
+        <item name="android:src">@drawable/button_back_60</item>
+        <item name="android:background">@drawable/button_selector</item>
+    </style>
+
+    <style name="goto_login">
+        <item name="android:src">@drawable/button_goto_login</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="activity_background">
+        <item name="android:background">@drawable/background_320_568</item>
+    </style>
+
+    <style name="baseEditTextTheme">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/main_font_60</item>
+        <item name="android:textColorHint">@color/main_font_50</item>
+    </style>
+
+    <style name="normal_text_edit" parent="baseEditTextTheme">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="box_big_edit_text" parent="baseEditTextTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="box_normal_edit_text" parent="baseEditTextTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="scrollView_style">
+        <item name="android:scrollbarThumbVertical">@drawable/base_list_scrollbar_handle</item>
+    </style>
+
+
+</resources>

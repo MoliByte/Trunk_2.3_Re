@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_back_white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color" >
+
+        <ImageView
+            android:id="@+id/backBtnFacialMaskTest"
+            style="@style/back_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/back_button_padding" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="面膜测试" />
+
+        <Button
+            android:id="@+id/hintFacialMaskTest"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_selector"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvFacialName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:text="美加净美肌肤面膜"
+                android:textColor="@color/text_light_gray"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="测试类别：补水"
+                    android:textColor="#a6a6a6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right" >
+
+                    <TextView
+                        android:id="@+id/textViewCurrentState1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textColor="#a6a6a6" />
+
+                    <ImageView
+                        android:id="@+id/ivRaiseIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:src="@drawable/facialraise"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textViewCurrentState2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4%"
+                        android:textColor="@color/facial_result_green"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="50dp" >
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArcOutFacial"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="30dp"
+                    seekarc:arcColor="#ace6f7"
+                    seekarc:clockwise="true"
+                    seekarc:max="0"
+                    seekarc:progressColor="#ace6f7"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="360"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArcFacial"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:padding="30dp"
+                    seekarc:arcColor="#e0e0e0"
+                    seekarc:clockwise="true"
+                    seekarc:max="100"
+                    seekarc:progressColor="#5cccff"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="300"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <TextView
+                    android:id="@+id/textViewTestStep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/seekArcFacial"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="面膜前"
+                    android:textColor="@color/facial_blue" />
+
+                <TextView
+                    android:id="@+id/textViewFacialResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewTestStep"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:text="0"
+                    android:textColor="@color/facial_blue"
+                    android:textSize="26sp" />
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutWaterIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewFacialResult"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="visible" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:src="@drawable/water_small_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="水份"
+                        android:textColor="#a6a6a6"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="bottom" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvFacialTestStep1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="面膜前"
+                        android:textColor="@color/facial_blue" />
+                    <TextView
+                        android:id="@+id/tvFacialTestStepTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0min"
+                        android:textSize="10sp"
+                        android:textColor="@color/facial_blue" />
+
+                    <TextView
+                        android:id="@+id/tvFacialResult1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/facial_blue"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:id="@+id/viewResult1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/facial_blue" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="70dp"
+                    android:background="@color/facial_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvFacialTestStep2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="即时补水" />
+                    
+                     <TextView
+                        android:id="@+id/tvFacialTestStepTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0-5min"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/tvFacialResult2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:id="@+id/viewResult2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/facial_gray" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="70dp"
+                    android:background="@color/facial_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvFacialTestStep3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="持续补水" />
+                    <TextView
+                        android:id="@+id/tvFacialTestStepTime3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="5-30min"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/tvFacialResult3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:id="@+id/viewResult3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/facial_gray" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="70dp"
+                    android:background="@color/facial_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvFacialTestStep4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="长效补水" />
+                     <TextView
+                        android:id="@+id/tvFacialTestStepTime4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="30-60min"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/tvFacialResult4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textSize="25sp" />
+
+                    <View
+                        android:id="@+id/viewResult4"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/facial_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonFacialEndTest"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/end_facialmask_test_selector"
+                android:text="结束测试"
+                android:textColor="@color/button_text_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

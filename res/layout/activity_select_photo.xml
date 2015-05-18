@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    <Button
+        android:id="@+id/btn_register_photo1"
+        style="@style/select_photo_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="拍照"
+         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#77898989"/>
+
+        <!--  android:background="@drawable/xiangce_from_abulum"-->
+
+    <Button
+        android:id="@+id/btn_register_photo2"
+        style="@style/select_photo_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="从相册选择" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"/>
+      <!--    android:background="@drawable/quxiao_photo"-->
+
+    <Button
+        android:id="@+id/btn_register_photo3"
+        style="@style/select_photo_btn"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="取消"/>
+
+</LinearLayout>

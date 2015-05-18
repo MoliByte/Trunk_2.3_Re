@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 下载更新 -->
+	
+	<string name="download_url">http://napi.skinrun.cn/v1/Version?type=7</string>
+	
+    <!-- 用户登录 -->
+    <string name="v1_session">/v1/session</string>
+
+    <!-- 用户信息 -->
+    <string name="v1_account">/v1/account</string>
+    
+    <!-- 用户地址 -->
+    <string name="v1_address">/v1/address</string>
+
+    <!-- 更改用户图像 -->
+    <string name="v1_avatar">/v1/avatar</string>
+
+    <!-- 修改用户信息 -->
+    <string name="v1_upate_user_ino">/v1/account</string>
+
+    <!-- 修改用户密码 -->
+    <string name="v1_password">/v1/password</string>
+
+    <!-- 获取地区信息 -->
+    <string name="v1_region">/v1/region</string>
+
+    <!-- 获取注册码接口 -->
+     <!-- <string name="v1_verifyCode">/v1/Code</string> -->
+     <string name="v1_verifyCode">/v1/verifyCode</string>
+     
+    <!-- 验证码新接口 -->
+    <string name="v1_new_verifyCode">http://v2.api.skinrun.me/api/member</string>
+     
+    <!-- 用户消息记录 GET -->
+    <string name="v1_message">/v1/message</string>
+
+    <!-- 我的消息 
+    <string name="v1_my_message">/v1/message</string>-->
+
+    <!-- 文章列表  文章列表   GET -->
+    <string name="v1_archive">/v1/archive</string>
+
+    <!-- /v1/post/{$id}		文章内容 
+    <string name="v1_post">/v1/post</string>-->
+
+    <!-- 发布文章评论  以及回复评论 -->
+    <string name="v1_postComment">/v1/postComment</string>
+    <string name="v2_api_comment">/api/comment</string>
+
+    <!-- 活动列表 GET -->
+    <string name="v1_activity">/v1/activity</string>
+
+    <!-- 活动详情 GET 
+    <string name="v1_activity_detail">/v1/archive</string>-->
+    <string name="v1_activity_detail">/v1/activity</string>
+
+    <!-- 文章活动点赞 POST -->
+    <string name="v1_post_praise">/v1/postPraise</string>
+
+    <!-- 文章评论点赞 POST -->
+    <string name="v1_comment_praise">/v1/commentPraise</string>
+
+    <!-- 获取当日话题 GET -->
+    <string name="v1_topics">/v1/topics</string>
+
+    <!-- 获取用户今日测试数据 GET -->
+    <string name="v1_test_record">/v1/testRecord</string>
+
+    <!-- 首页广告 GET -->
+    <string name="v1_advert">/v1/advert</string>
+
+    <!-- 用户反馈 POST -->
+    <string name="v1_feedback">/v1/feedBack</string>
+    
+    <!-- V2 用户反馈 POST -->
+    <string name="v2_feedback">/api/feedback</string>
+
+    <!-- 用户金币记录 -->
+    <string name="v1_credit_log">/v1/creditLog</string>
+    
+    <!-- 环信注册 
+    <string name="v1_huanXin">/v1/huanXin</string>-->
+    
+    <!-- 第三方登录信息同步接口 -->
+    <string name="v1_third">/v1/third</string>
+    
+    <!-- 用户分享获取积分 -->
+    <string name="v1_share">/v1/share</string>
+    
+    <!-- 测试页面 -->
+    <string name="TEST_SKIN">/api_interface.php</string>
+	
+    <!-- LS接口名称 -->
+    
+    <!-- 取消关注商家 -->
+    <string name="cancle_merchant_attention">http://v2.api.skinrun.me/api/Profile</string>
+    
+    <!-- 删除我的消息 -->
+    <string name="delete_mine_message">http://v2.api.skinrun.me/api/profile</string>
+    <!-- 我的积分变动 -->
+    <string name="my_integral_record">http://v2.api.skinrun.me/api/profile</string>
+    
+  	<!-- 得到品牌下产品 -->
+    <string name="get_brand_product">http://v2.api.skinrun.me/api/Profile</string>
+    
+    <!-- 得到商家详情 -->
+    <string  name="merchant_detail">http://v2.api.skinrun.me/api/Profile</string>
+    
+    <!-- 我关注的商家 -->
+    <string  name="my_follow_merchant">http://v2.api.skinrun.me/api/Profile</string>
+    
+    <!-- 首页互动 包括收藏,点赞，评论 -->
+    <string name="home_interaction">http://v2.api.skinrun.me/api/interaction</string>
+    
+    <!-- 我的肌肤测试 -->
+    <string name="my_skin_test">http://v2.api.skinrun.me/api/profile</string>
+    
+     <!-- 删除收藏记录 -->
+    <string name="delete_collection">http://v2.api.skinrun.me/api/interaction</string>
+    
+    <!-- 得到精选详情 -->
+    <string name="selected_detail">http://v2.api.skinrun.me/api/interaction</string> 
+    
+    <!-- 发表肌肤测试心情 -->
+    <string name="publish_skintest_mood">http://v2.api.skinrun.me/api/Skintest</string>
+    
+    <!-- 上传肌肤测试所拍图片 -->
+    <string name="upload_skin_image">http://v2.api.skinrun.me/api/Skintest</string>
+    
+    <!-- 发表面膜测试心情 -->
+    <string name="publish_facialmsak_mood">http://v2.api.skinrun.me/api</string>
+    
+    <!-- 得到面膜测试所选品牌产品	 +	/product?type=product&name="+content -->
+    <string name="get_facialmask_brand">http://v2.api.skinrun.me/api</string>
+    
+    <!-- 首页数据 -->
+    <string name="home_data">http://v2.api.skinrun.me/api/home</string>
+
+    <!-- 二维码扫描提交地址 -->
+    <string name="td_code">http://v2.api.skinrun.me/api/scan</string>
+    
+    <!-- 上传面膜测试所拍图片 -->
+    <string name="upload_facialmask_image">http://v2.api.skinrun.me/api/upload</string>
+    
+    <!-- 提交面膜测试数据 -->
+    <string name="post_facialmsak_data">http://v2.api.skinrun.me/api/facemark</string>
+    
+    <!-- 面膜测试建议 -->
+    <string name="get_facialmask_advice">http://v2.api.skinrun.me/api/facialmasksuggestion</string>
+    
+    <!-- 肌肤测试运动建议 -->
+    <string name="sport_advice">http://v2.api.skinrun.me/api/testReportProposal</string>
+    
+    <!-- 金寇产品H5页面地址 -->
+    <string name="merchant_page_url">http://merchant.skinrun.me</string>
+    
+    <!-- 我的消息 -->
+     <string name="mine_message">http://v2.api.skinrun.me/api/profile</string>
+    <!-- 肌肤测试数据是否上首页 -->
+    <string name="skin_go_to_home">http://v2.api.skinrun.me/api/Skintest</string>
+    
+    <!-- 晚九点历史回顾 -->
+    <string name="pm9_history" >/api/pm9/history</string>
+    
+    <!-- 新版意见反馈接口 v2 -->
+    <string name="api_feedback" >/api/feedback</string>
+    
+    <!-- 保存pm9聊天消息 -->
+    <string name="v2_pm9_message">/api/pm9/create</string>
+    
+     <!-- 判断用户资料是否完善 -->
+    <string name="judge_userinfo">http://v2.api.skinrun.me/api/profile</string>
+
+    <!-- 获取我的消息未读条数 -->
+    <string name="get_mymessage_count">http://v2.api.skinrun.me/api/profile</string>
+    
+    <!-- 清除我的消息未读条数 -->
+    <string name="clear_mymessage_count">http://v2.api.skinrun.me/api/profile</string>
+    
+    <!-- LS接口名称 -->
+    
+    <!-- 我的页面开关 on代表开，off代表关-->
+    
+    <!-- 起始页开关
+    	startup_merchant_on:商家
+    	startup_skinrun_on:肌肤管家
+     -->
+    <string name="startup_switch">startup_merchant_on</string>
+    
+    <!-- 主页视图开关 -->
+    <string name="home_switch">home_on</string>
+    
+    <!-- 产品与晚九点切换开关 on:晚九点,off:产品 -->
+    <string name="production_or_pmg9">on</string>
+    
+    <!-- 扫一扫开关  scan_on代表开，其他的代表关-->
+    <string name="scan_switch">scan_on</string>
+    
+     <!-- 我的消息开关  message_on代表开，其他的代表关-->
+    <string name="message_switch">message_on</string>
+    
+    <!-- 我的订阅开关  subscribe_on代表开，其他的代表关-->
+    <string name="subcribe_switch">subscribe_on</string>
+    
+    
+     <!-- 我的收藏开关  collect_on代表开，其他的代表关-->
+    <string name="collect_switch">collect_on</string>
+    
+     <!-- 晚九点活动开关 -->
+    <string name="pm9_switch">pm9_off</string>
+    
+    
+     <!-- 我的页面-我的测试开关  test_on代表开，其他的代表关-->
+    <string name="my_test_switch">test_on</string>
+    
+     <!-- 管家金币开关  my_integral_on代表开，其他的代表关-->
+    <string name="my_integral_switch">my_integral_on</string>
+    
+    
+     <!-- 收货地址开关  aderess_on代表开，其他的代表关-->
+    <string name="aderess_switch">aderess_on</string>
+    
+    
+     <!-- 系统设置开关  system_setting_on代表开，其他的代表关-->
+    <string name="system_setting_switch">system_setting_on</string>
+    
+    
+    <!-- 测试开关，only_skin代表只有肌肤测试 ,both_two代表两个测试都有,only_facial_mask代表只有面膜测试-->   
+    <string name="show_test_type">both_two</string>
+    
+    <!-- 活动参与拍照显示与隐藏 on:显示，off：隐藏 -->
+    <string name="activity_show_or_hiden">on</string>
+    
+    <!-- 是否接收友盟推送自定义消息 on表示接收，off表示不接收-->
+    <string name="is_receive_UMMessage">on</string>
+    
+    <!-- 异常处理 -->
+    <string name="ERROR_404">~_~网速不给力哦~，请稍后再试!</string>
+    
+    <string name="no_network">网络连接异常，请检查您的网络~</string>
+   
+    <!-- 提示语输入框中未写文字就点击发送提示： -->
+    <string name="no_comment">还没有输入内容哦!</string>
+
+    <!-- 小主~字数超过最大限制500字了哦！ -->
+    <string name="character_limited">小主~字数超过最大限制100字了哦！</string>
+
+    <!-- 评论发送成功提示： -->
+    <string name="comment_success">评论成功！恭喜获得x管家金币！</string>
+
+    <!-- 请登录 -->
+    <string name="please_login">请登录!</string>
+    <string name="cant_replay_self">不能回复自己</string>
+    
+    <!-- 更新地址失败 -->
+    <string name="put_address_fail">网络异常,请稍后再试~</string>
+    
+    <string name="put_address_success">地址已收到噢~</string>
+    
+    <string name="nick_awarded_intro">昵称后为手机后四位</string>
+    
+    <!-- 获取数据异常 -->
+    <string name="data_error">获取数据异常!</string>
+    
+    <string-array name="years">
+        <item>2010</item>
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+    </string-array>
+    <string-array name="months">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="days_28">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+    </string-array>
+    <string-array name="days_29">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+    </string-array>
+    <string-array name="days_30">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+    <string-array name="days_31">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <!-- 环信字符串 -->
+    <string name="text_ack_msg">已读</string>
+    <string name="text_delivered_msg">送达</string>
+    <string name="back">返回</string>
+    <string name="save">保存</string>
+    <string name="button_pushtotalk">按住说话</string>
+    <string name="button_send">发送</string>
+    <string name="attach_smile">表情</string>
+    <string name="attach_picture">图片</string>
+    <string name="attach_test">测试</string>
+    <string name="attach_take_pic">拍照</string>
+    <string name="attach_location">位置</string>
+    <string name="attach_file">文件</string>
+    <string name="attach_voice_call">语音电话</string>
+    <string name="user_card">名片</string>
+    <string name="move_up_to_cancel">手指上滑，取消发送</string>
+    <string name="release_to_cancel">松开手指，取消发送</string>
+    <string name="send_fail">消息发送失败,请稍后重试!</string>
+    <string name="delete_message">删除消息</string>
+    <string name="copy_message">复制消息</string>
+    <string name="delete_voice">删除语音</string>
+    <string name="delete_video">删除视频</string>
+    <string name="delete">删除</string>
+    <string name="resend">重发</string>
+    <string name="confirm_resend">确认重发该信息？</string>
+    <string name="connect_failuer_toast">请检查网络或稍候重试</string>
+    <string name="network_unavailable">网络连接不可用，请检查网络</string>
+    <string name="copy">复制</string>
+    <string name="forward">转发</string>
+    <string name="button_logout">退出登录</string>
+    <string name="button_uploadlog">上传运行日志</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="prompt">提示</string>
+    <string name="clear_records">清空记录</string>
+    <string name="clear_all_records">是否清空所有聊天记录？</string>
+    <string name="location_recv">[%1$s的位置]</string>
+    <string name="location_message">位置信息</string>
+    <string name="recording_video">录制视频</string>
+    <string name="location_prefix">[我的位置]</string>
+    <string name="voice">[语音]</string>
+    <string name="picture">[图片]</string>
+    <string name="video">[视频]</string>
+    <string name="file">[文件]</string>
+    <string name="voice_call">[语音通话]</string>
+    <string name="button_cancel">取消</string>
+    <string name="button_save">保存</string>
+    <string name="button_search">查找</string>
+    <string name="button_add">添加</string>
+    <string name="search_header">搜</string>
+    <string name="network_isnot_available">网络不可用</string>
+    <string name="recoding_fail">录音失败，请重试！</string>
+    <string name="select_contacts">选择联系人</string>
+    <string name="confirm_forward_to">确定转发到：%1$s ?</string>
+    <string name="logout">退出登录</string>
+    <string name="logout_hint">退出后不会删除任何历史数据，下次登录依然可以使用本账号</string>
+    <string name="exit_group_hint">退出后，将不再接收此群聊信息</string>
+    <string name="dissolution_group_hint">退出后，此群将被解散</string>
+    <string name="exit_group">退出</string>
+    <string name="connect_conflict">同一帐号已在其他设备登录</string>
+    <string name="title_activity_reset_password">ResetPassword</string>
+    <string name="zhongjianghint">获奖名单新鲜出炉~!</string>
+    
+    <string name="tips">提示</string>
+    <string name="please_choose">请选择</string>
+    <string name="share">分享</string>
+    <string name="right">好的</string>
+    <string name="hardLoading">努力加载中...</string>
+    <string name="badNetwork">网络差</string>
+    
+    <!--  -->
+    <string name="no_more_msg">没有更多消息了~_~</string>
+
+    <string name="versionIsAlreadyNew">已经是最新版本了</string>
+    <string name="sureToUpdate">确定更新版本吗</string>
+    <string name="updateLog">更新日志</string>
+    <string name="installNewVersion">安装新版本</string>
+    <string name="laterNotify">稍后提醒</string>
+    <string name="haveNewVersion">版本更新</string>
+    
+    <string name="pressToRecord">按住录音</string>
+    <string name="pleaseSayMore">说多点吧～</string>
+    <string name="failedToGetData">获取数据失败</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="sex">性别</string>
+    <string name="status_online">[在线]</string>
+    <string name="status_offline">[离线请留言]</string>
+    <string name="sending">发送中</string>
+    <string name="received">已接收</string>
+
+    <string name="messages">会话</string>
+    <string name="contact">联系人</string>
+    <string name="me">我</string>
+    <string name="discover">发现</string>
+    <string name="emptyStr" />
+    <string name="avatar">头像</string>
+    <string name="username">用户名</string>
+    <string name="nickname">昵称</string>
+    <string name="please_input_hint">请输入{0}</string>
+    <string name="change_title">{0}</string>
+    <string name="sent">已发送</string>
+    <string name="failed">失败</string>
+    <string name="newMessage">新的消息</string>
+    <string name="image">图片</string>
+    <string name="cancelRecord">取消录音</string>
+    <string name="audio">语音</string>
+    <string name="getGeoInfoFailed">获取地理位置信息失败!</string>
+    <string name="position">位置</string>
+    <string name="geoIsSame">获取坐标相同</string>
+    <string name="mapKeyErrorTips">key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置</string>
+    <string name="cannotFindResult">抱歉，未能找到结果</string>
+    <string name="reverseGeoCodeResultIs">反编码得到的地址：</string>
+
+    <string name="camera">拍摄</string>
+    <string name="location">位置</string>
+    <string name="send">发送</string>
+    <string name="cannotGetYourAddressInfo">无法获取到您的位置信息！</string>
+    <string name="emotion">表情</string>
+    <string name="pleaseCheckNetwork">请检查网络</string>
+    <string name="login_username_hint">请输入用户名</string>
+    <string name="ensurePasswordHint">请在此输入密码</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="ensurePassword">确认密码 </string>
+    <string name="register">注册</string>
+
+    <string name="password_can_not_null">密码不能为空</string>
+    <string name="username_cannot_null">用户名不能为空</string>
+    <string name="password_not_consistent">输入的两次密码不一致</string>
+    <string name="registerSucceed">注册成功</string>
+    <string name="registerFailed">注册失败。</string>
+
+    <string name="not_have_account">还没有账号？</string>
+    <string name="register_rightnow">立即注册 &gt;</string>
+    <string name="metres">米</string>
+    <string name="unknown">未知</string>
+    <string name="recent_login_time">最近登录时间:</string>
+    <string name="account">账号 </string>
+    <string name="search">搜索</string>
+
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <string name="vibrate">震动</string>
+
+    <string name="chat">发起会话</string>
+    <string name="add_friend">添加好友</string>
+
+    <string name="new_friends">新朋友</string>
+
+    <string name="deleteFriendRequest">删除好友请求</string>
+    <string name="agreed">已同意</string>
+    <string name="deleteContact">删除联系人</string>
+    <string name="sure">确定</string>
+    <string name="deleteSucceed">删除成功</string>
+    <string name="findFriends">查找好友</string>
+    <string name="dataLoadFinish">数据加载完成</string>
+    <string name="add">添加</string>
+    <string name="sendRequestSucceed">发送请求成功，等待对方验证</string>
+    <string name="personalInfo">个人资料</string>
+    <string name="detailInfo">详细资料</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="noResult">无相关结果</string>
+    <string name="loadMessagesFinish">聊天记录加载完毕</string>
+    <string name="notifySetting">提醒设置</string>
+    <string name="notifyWhenNews">接收新消息通知</string>
+    <string name="group">群组</string>
+    <string name="groupName">群组名</string>
+    <string name="create">创建</string>
+    <string name="groupMembers">群组成员</string>
+    <string name="inviteSucceed">已发出邀请</string>
+    <string name="inviteMembers">邀请群成员</string>
+    <string name="kickTips">确认要踢走该成员吗</string>
+    <string name="invite">邀请</string>
+    <string name="kilometres">公里</string>
+    <string name="quitGroup">退群</string>
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新…</string>
+    <string name="checkUpdate">检查更新</string>
+    <string name="haveRead">已阅读</string>
+    <string name="slideUpToCancel">手指上滑，取消发送</string>
+    <string name="releaseToCancel">松开手指，取消录音</string>
+    <string name="sessionPausedTips">会话暂停，等网络良好</string>
+    <string name="sort">排序</string>
+    <string name="loginTime">登录时间</string>
+    <string name="distance">距离</string>
+    <string name="select_picture">选择图片</string>
+
+    <string name="listEmptyHint">无数据</string>
+    <string name="noMore">已无更多</string>
+    <string name="cloudCodeNotDeployTips">云代码未部署，请到项目主页根据说明来部署</string>
+    
+     <string name="loaded_fail">加载失败，请点击屏幕重试</string>
+    <string name="donot_has_sdcard">暂无外部存储</string>
+    <string name="image_count">%1$s张</string>
+    <string name="no_images">您的手机中暂时没有图片哦~</string>
+
+
+</resources>

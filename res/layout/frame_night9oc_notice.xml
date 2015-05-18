@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none"
+    android:overScrollMode="never"
+    style="@style/scrollView_style"
+    android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <include layout="@layout/frame_night9oc_top"/>
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/oval_white_bg"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#9fff"
+            android:id="@+id/explainBtn"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今晚"
+                style="@style/night9oclock_notice_time_text"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/night9oclock_start_time"
+                style="@style/night9oclock_notice_time"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点"
+                style="@style/night9oclock_notice_time_text"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="准时开启!"
+            style="@style/night9oclock_notice_text"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="@dimen/night9oclock_clock_width"
+                android:layout_height="@dimen/night9oclock_clock_height"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/n9clock_bg_03">
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/hourTopBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/hourTopBg2"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/hourTopBg1"
+                    android:id="@+id/hourBottomBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/hourTopBg2"
+                    android:id="@+id/hourBottomBg2"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/night9oclock_clock_width"
+                android:layout_height="@dimen/night9oclock_clock_height"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/n9clock_bg_03">
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/minuteTopBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/minuteTopBg2"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/minuteTopBg1"
+                    android:id="@+id/minuteBottomBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/minuteTopBg2"
+                    android:id="@+id/minuteBottomBg2"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/night9oclock_clock_width"
+                android:layout_height="@dimen/night9oclock_clock_height"
+                android:background="@drawable/n9clock_bg_03">
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/secondTopBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:id="@+id/secondTopBg2"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/secondTopBg1"
+                    android:id="@+id/secondBottomBg1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/night9oclock_clock_width"
+                    android:layout_height="@dimen/night9oclock_clock_height_half"
+                    android:layout_below="@id/secondTopBg2"
+                    android:id="@+id/secondBottomBg2"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抢奖？抢楼？灌水？问答？…"
+            style="@style/night9oclock_notice_subhead"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/n9clock_logo"/>
+
+    </LinearLayout>
+</ScrollView>

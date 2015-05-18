@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <com.base.pulltorefresh.view.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/master_article"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+          android:listSelector="#00000000" 
+        android:divider="#19000000"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawableEnd="@drawable/refresh_ptr_flip_gray"
+        ptr:ptrDrawableStart="@drawable/refresh_ptr_flip_gray"
+        ptr:ptrHeaderBackground="#c3c3c5"
+        ptr:ptrHeaderSubTextColor="#000"
+        ptr:ptrHeaderTextColor="#000"
+        ptr:ptrMode="both" />
+
+</LinearLayout>

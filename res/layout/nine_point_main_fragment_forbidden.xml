@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:orientation="vertical" >
+
+    <!-- 晚九点头部 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color" >
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/back_image"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title_name"
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/nine_point_name" />
+
+        <!-- 分享按钮 -->
+
+        <ImageView
+            android:id="@+id/popupShareBtn"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_selector"
+            android:padding="6dp"
+            android:src="@drawable/share_icon_60"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <!-- 可滑动区域 -->
+
+    <ScrollView
+        android:id="@+id/nine_clock_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/nine_point_main_head" />
+            <!-- 晚九点活动 -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="今晚"
+                            android:textColor="#c7c7c7"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            style="@style/night9oclock_notice_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/night9oclock_start_time" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点"
+                            android:textColor="#c7c7c7"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="false"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <!-- 晚九点状态 火热进行中、准时开启 -->
+
+                        <TextView
+                            android:id="@+id/nine_status"
+                            style="@style/night9oclock_notice_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:text="准时开启!" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/going_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="false"
+                        android:orientation="horizontal" >
+
+                        <RelativeLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/timer_bg" 
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:text="00"
+                                android:textColor="#fff"
+                                android:textSize="22sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/timer_bg" 
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/minute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:text="00"
+                                android:textColor="#fff"
+                                android:textSize="22sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/timer_bg" 
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/seconds"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:text="00"
+                                android:textColor="#fff"
+                                android:textSize="22sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/btn_round_corner_layout"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="活动暂停中"
+                                android:textColor="#fff"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+                    </FrameLayout>
+                    <!-- 活动结束 -->
+
+                     <RelativeLayout
+                        android:id="@+id/over"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/btn_round_corner_layout"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" 
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:text="活动暂停中"
+                            android:textColor="#fff"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <!-- 活动 进行中 -->
+
+                    <RelativeLayout
+                        android:id="@+id/get_in"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/btn_round_corner_layout"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="活动暂停中"
+                            android:textColor="#fff"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/see_u_nine" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/nine_clock_introduce"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/nine_clock_introduce"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

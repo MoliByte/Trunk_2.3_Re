@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="fileservice.filemeta.url">http://idl-file.inf.idongler.com/filemeta</string>
+    <string name="fileservice.rootPathName">qpstudio</string>
+    <string name="fileservice.fileUrlBase">http://idl-file.inf.idongler.com/file/</string>
+    <string name="fileservice.key">TdgDTI8tDShN5R</string>
+    <string name="fileservice.tenaId">qpstudio</string>
+    <string name="fileservice.tenaName">bzrmzs</string>
+
+    <string name="avarta.urlTemplate">http://42.120.11.198/bzrmzs/showImage/private/%s.jpg</string>
+
+</resources>

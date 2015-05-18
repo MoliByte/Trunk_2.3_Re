@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 肌肤管家 -->
+    <dimen name="mag_content_padding_left">@dimen/content_padding_left</dimen>
+    <dimen name="mag_content_padding_right">@dimen/content_padding_right</dimen>
+
+    <color name="testnum_font">#e1f0e310</color>
+    <color name="score_font">#e1d7e415</color>
+
+    <color name="water_report">#7f0cdff8</color>
+    <color name="oil_report">#7ffef403</color>
+    <color name="elasticity_report">#7f00ffc0</color>
+    
+    <style name="test_result_item_label">
+        <item name="android:textColor">@color/main_font_90</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">left|bottom</item>
+    </style>
+
+    <style name="test_result_item_value">
+        <item name="android:textColor">@color/main_font</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 皮肤测试结果 -->
+
+    <dimen name="test_content_padding_left">@dimen/content_padding_left</dimen>
+    <dimen name="test_content_padding_right">@dimen/content_padding_right</dimen>
+
+    <style name="test_result_head">
+        <item name="android:layout_marginLeft">@dimen/test_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/test_content_padding_right</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="test_result_content">
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/main_font_60</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+
+
+    <style name="test_choose_testplace_txt">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/main_font_70</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <dimen name="select_skintype_height">60dp</dimen>
+
+    <style name="select_skintype_item">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/main_font_70</item>
+        <item name="android:background">@drawable/skintype_item_selector</item>
+    </style>
+
+    <style name="test_bottom_background">
+        <item name="android:background">@drawable/test_bottom_color</item>
+    </style>
+    <drawable name="test_bottom_color">#25ffffff</drawable>
+
+
+    <!-- 测试结果刻度padding 宽度 -->
+    <dimen name="test_padding_width">13dp</dimen>
+    <dimen name="test_icon_smiley_size">12dp</dimen>
+
+    <!-- 测试分享描述 -->
+    <dimen name="test_ct_value_desc_width">160dp</dimen>
+
+    <!-- 测试分享滤镜 -->
+    <style name="test_filter_container">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="test_filter_photo">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="test_filter_photo_border">
+        <item name="android:background">@drawable/photo_border_selector</item>
+        <item name="android:padding">2dp</item>
+    </style>
+    <dimen name="test_filter_photo_height">55dp</dimen>
+
+    <style name="test_filter_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/photo_filter_text_selector</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="test_share_photo_text">
+        <item name="android:shadowColor">#ff060001</item>
+        <item name="android:shadowDx">4</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+</resources>

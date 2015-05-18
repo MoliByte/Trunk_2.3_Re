@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="cale_content_padding_left">10dp</dimen>
+    <dimen name="cale_content_padding_right">10dp</dimen>
+
+    <dimen name="cale_week_height">70dp</dimen>
+
+    <style name="cale_week_txt">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/main_font_60</item>
+    </style>
+    <style name="cale_date_txt">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/main_font_90</item>
+    </style>
+
+
+    <style name="cale_dayLine">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <style name="cale_context_line">
+        <item name="android:layout_marginLeft">@dimen/cale_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/cale_content_padding_right</item>
+    </style>
+
+    <drawable name="week_background_default">#11ffffff</drawable>
+    <drawable name="week_background_select">#b2d6838d</drawable>
+    <drawable name="week_background_press">#22ffffff</drawable>
+
+
+</resources>

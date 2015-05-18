@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/backBtnFacialResult"
+            style="@style/back_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/back_button_padding" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="测试结果" />
+
+        <ImageView
+            android:id="@+id/facialResultShare"
+            style="@style/share_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="6dp"
+            android:visibility="invisible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvFacialResultName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="美加净保湿面膜"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/ivProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@color/Skin_White"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mianmo" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="20dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/facial_result_back1" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="#88ffffff"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="面膜前"
+                                android:textColor="#848484" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="#88ffffff"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/step2time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#848484" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="#88ffffff"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/step3time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#848484" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="#88ffffff"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/step4time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#848484" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.app.custom.view.FacialChartView
+                        android:id="@+id/facialChartView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/jishibushui" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="即时补水："
+                            android:textColor="#848484"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/facial_water1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_raise1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facialraise" />
+
+                        <TextView
+                            android:id="@+id/facial_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text=""
+                            android:textColor="@color/facial_result_green"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+                        android:textColor="@color/facial_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/chixubushui" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="持续补水："
+                            android:textColor="#848484"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/facial_water6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_raise2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facialraise" />
+
+                        <TextView
+                            android:id="@+id/facial_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="0%"
+                            android:textColor="@color/facial_result_green"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+                        android:textColor="@color/facial_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/changxiaobushui" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="长效补水："
+                            android:textColor="#848484"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/facial_water11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_water15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facial_water"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/facial_raise3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:src="@drawable/facialraise" />
+
+                        <TextView
+                            android:id="@+id/facial_text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="0%"
+                            android:textColor="@color/facial_result_green"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvFacial_advice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="面膜就好比餐后的“苹果”，每周让肌肤“多吃”几次，就能养出水嫩的公主脸。你可以考虑具有清凉感的镇定产品，这些产品往往及其温和"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/facial_gray" />
+
+                <EditText
+                    android:id="@+id/editTextWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@null"
+                    android:hint="说说此刻的想法..."
+                    android:minHeight="60dp"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/facial_gray"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/share_back"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="分享至"
+                            android:textColor="@color/text_light_gray" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroupShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radioWXShare"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="10dp"
+                                android:button="@null"
+                                android:checked="true"
+                                android:drawableRight="@drawable/wx_selector" />
+
+                            <RadioButton
+                                android:id="@+id/radioSinaShare"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:button="@null"
+                                android:drawableRight="@drawable/sina_selector" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivStartShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/share_selector" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</LinearLayout>

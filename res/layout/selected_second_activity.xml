@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/second_seleced_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Skin_White"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <com.idongler.widgets.CircleImageView
+            android:id="@+id/civUserImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/my_pic_default" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="长发为谁盘起"
+                android:textColor="@color/home_name"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvUserState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="干性肌肤 23岁"
+                android:textColor="@color/home_state"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="3分钟前"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivBig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/second_mask_hint"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="即时补水"
+                android:textColor="#7d7d7d"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/ivJiShiRaise"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:src="@drawable/facialraise" />
+
+            <TextView
+                android:id="@+id/tvJiShiNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15.6%"
+                android:textColor="@color/home_num"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="持续补水"
+                 android:textColor="#7d7d7d"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/ivChiXuRaise"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:src="@drawable/facialraise" />
+
+            <TextView
+                android:id="@+id/tvChiXuNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.2%"
+                android:textColor="@color/home_num"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="长效补水"
+                 android:textColor="#7d7d7d"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/ivChangXiaoRaise"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/facialraise" />
+
+            <TextView
+                android:id="@+id/tvChangXiaoNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.3%"
+                android:textColor="@color/home_num"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPublishContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="皮肤指身体表面包在肌肉外面的组织，是人体最大的器官，主要承担着保护身体、排汗、感觉冷热和压力等功能。皮肤覆盖全身，它使体内各种组织和器官免受物理性、机械性、化学性和病原微生物性的侵袭。"
+         android:textColor="#7b7b7b"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvPublishTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="发布于 2015-03-17 20：55"
+        android:textColor="#c3c3c3"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/home_vertical_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <GridView
+            android:id="@+id/gvUserIcon"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:listSelector="@android:color/transparent"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:numColumns="7" >
+        </GridView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/ivPraise"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/home_support_1" />
+
+            <TextView
+                android:id="@+id/tvPraiseNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="130"
+                android:textColor="@color/home_num"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="10dp"
+	    android:background="#f5f5f5"
+	    
+	    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="最新评论"
+            android:textColor="#b0b0b0"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvCommentNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="（共有21条评论）"
+            android:textColor="#c3c3c3"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:background="@color/home_vertical_line" />
+
+</LinearLayout>

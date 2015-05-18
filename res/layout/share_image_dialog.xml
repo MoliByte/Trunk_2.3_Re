@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#99f2e9e9">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal">
+
+
+
+            <RadioButton
+                android:text="微信好友"
+                android:id="@+id/wxBut"
+                android:layout_marginBottom="1dp"
+                style="@style/WXItemTheme"
+                android:textColor="#010101"
+                />
+
+            <RadioButton
+                android:text="微信朋友圈"
+                android:id="@+id/wxbBut"
+                android:layout_marginBottom="1dp"
+                style="@style/WXBItemTheme"
+                android:textColor="#010101"
+                />
+
+            <RadioButton
+                android:text="微博"
+                android:id="@+id/wbBut"
+                android:layout_marginBottom="1dp"
+                style="@style/WBItemTheme"
+                android:textColor="#010101"
+                />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="QQ好友"
+                android:id="@+id/qqBut"
+                android:layout_marginBottom="1dp"
+                style="@style/QQItemTheme"
+                android:textColor="#010101"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+        </LinearLayout>-->
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#010101"
+        android:text="取消"
+        android:textSize="16sp"
+        android:background="@drawable/share_img_btn_selector"
+        android:id="@+id/cancelBut"
+        />
+
+</LinearLayout>

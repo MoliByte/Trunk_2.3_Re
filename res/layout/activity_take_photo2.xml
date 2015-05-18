@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    android:orientation="vertical" >
+
+    <!-- 显示预览图形 -->
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="#303030" >
+
+        <ToggleButton
+            android:id="@+id/lightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_selector"
+            android:checked="false"
+            android:drawableLeft="@drawable/icon_light"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:textColor="#fff2e9e9"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/cameraBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="center"
+            android:src="@drawable/icon_camera" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:background="#303030" >
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_selector"
+            android:paddingRight="5dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_back" />
+
+        <ImageView
+            android:id="@+id/takePhotoBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/oval_box_selector"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_camera_take" />
+
+        <ImageView
+            android:id="@+id/openImgBtn"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="center"
+            android:src="@drawable/icon_image" />
+    </RelativeLayout>
+
+</RelativeLayout>

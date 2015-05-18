@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_back_white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/backBtnFacialMask"
+            style="@style/back_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/back_button_padding" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="面膜测试"
+            android:textColor="@color/title_text_color" />
+
+        <ImageView
+            android:id="@+id/hintFacialMask"
+            style="@style/help_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:padding="6dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/ll_outSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal" >
+
+                <EditText
+                    android:id="@+id/facialMaskBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rounded_edittext_all"
+                    android:cursorVisible="true"
+                    android:gravity="center_vertical|left"
+                    android:hint="请填写面膜品牌及名称"
+                    android:inputType="text"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#bababa"
+                    android:textSize="14sp" >
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/facialMaskBrand"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/facial_search" />
+
+                <TextView
+                    android:id="@+id/facialMaskName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/facialMaskBrand"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left"
+                    android:text="您使用的面膜"
+                    android:textColor="#9c9c9c"
+                    android:textSize="14sp" />
+
+                <FrameLayout
+                    android:id="@+id/FrameLayout1"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_below="@+id/facialMaskName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/facemask_entry_frame_shape" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/imageViewUpLoadImage"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/facialtestentryupload" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:text="点击上传实物图"
+                            android:textColor="#D3D3D3"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivTakedPhoto"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RelativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/FrameLayout1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="50dp" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/facialtestentrywarn" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/imageView2"
+                        android:text="测试前，请确保肌肤在清洁脸部，并未使用任何护肤产品的状态下，否则测试结果可能会不准哟"
+                        android:textColor="#bababa"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/buttonStartFacialTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/RelativeLayout1"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/start_facialtest_selector"
+                    android:text="开始测试"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/upline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignLeft="@+id/facialMaskBrand"
+                    android:layout_alignRight="@+id/facialMaskBrand"
+                    android:layout_below="@+id/facialMaskBrand"
+                    android:background="#bababa"
+                    android:visibility="gone" />
+
+                <ListView
+                    android:id="@+id/lvProductHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/upline"
+                    android:layout_alignRight="@+id/upline"
+                    android:layout_below="@+id/upline"
+                    android:background="@color/Skin_White"
+                    android:divider="#bababa"
+                    android:dividerHeight="1px"
+                    android:listSelector="@drawable/listview_selector"
+                    android:visibility="gone" >
+                </ListView>
+
+                <View
+                    android:id="@+id/downline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignLeft="@+id/lvProductHint"
+                    android:layout_alignRight="@+id/lvProductHint"
+                    android:layout_below="@+id/lvProductHint"
+                    android:background="#bababa"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

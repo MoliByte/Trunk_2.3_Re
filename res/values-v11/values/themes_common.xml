@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 地区单元格高度-->
+    <dimen name="region_cell_height">48dp</dimen>
+
+    <dimen name="region_content_padding_left">@dimen/content_padding_left</dimen>
+    <dimen name="region_content_padding_right">@dimen/content_padding_right</dimen>
+
+    <style name="region_name_cell">
+        <item name="android:layout_marginLeft">@dimen/region_content_padding_left</item>
+        <item name="android:layout_marginRight">@dimen/region_content_padding_right</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/main_font</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <!-- 图片选择器 -->
+    <dimen name="img_selector_cell_height">48dp</dimen>
+
+    <color name="img_selector_line">#ff8a8a8a</color>
+    <color name="img_selector_pressed">#22ffffff</color>
+
+
+    <style name="img_selector_title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/main_font_60</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="img_selector_cell_item">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/main_font_60</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/image_selector_item_selector</item>
+    </style>
+
+
+    <style name="splash_start_btn">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/submitbtn_call_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">40dp</item>
+    </style>
+
+    <style name="splash_start_text">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/main_font_80</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <dimen name="splash_start_btn_height">44dp</dimen>
+
+
+</resources>

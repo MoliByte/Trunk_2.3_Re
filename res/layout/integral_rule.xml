@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#999999">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backBtn"
+                android:src="@drawable/button_back_60"
+                android:background="@drawable/button_selector"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="积分规则"
+                android:textSize="24sp"
+                android:textColor="#ccffffff"
+                android:layout_centerInParent="true"
+                android:gravity="center"/>
+
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:id="@+id/toUserProfileBtn"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+
+                <com.idongler.widgets.CircleView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:color="#66ffffff"
+                        app:stroke="true"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"/>
+
+                <com.idongler.widgets.CircleImageView
+                        android:layout_width="87dp"
+                        android:layout_height="87dp"
+                        android:id="@+id/avatarImg"
+                        android:layout_gravity="center"
+                        />
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="昵称"
+                            android:textColor="@color/main_font"
+                            android:textSize="22sp"
+                            android:id="@+id/nickNameTxt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="7dp"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="15dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="等级:"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#ccffffff"
+                            android:textSize="18sp"
+                            android:gravity="center_vertical"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Lv1"
+                            android:textColor="#ccffffff"
+                            android:textSize="18sp"
+                            android:gravity="center_vertical"
+                            android:id="@+id/rankTxt"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="积分:"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="#ccffffff"
+                            android:textSize="18sp"
+                            android:gravity="center_vertical"/>
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="300"
+                            android:textColor="#ccffffff"
+                            android:textSize="18sp"
+                            android:gravity="center_vertical"
+                            android:id="@+id/integralTxt"/>
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="15dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="积分记录:"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#ccffffff"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:id="@+id/integralRecordTxt"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp">
+            <Button android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="积分说明"
+                    android:id="@+id/integralDstBtn"/>
+
+            <Button android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="积分规则"
+                    android:id="@+id/integralRBtn"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/integralDstImg"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="night9oclock_activity_content_text">
+        <item name="android:background">#109d3160</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#cfff</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="night9oclock_notice_time_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#8fff</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="night9oclock_notice_time">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#fff4bd3f</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="night9oclock_notice_text">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#C7C7C7</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="night9oclock_notice_count">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#dfff</item>
+        <item name="android:background">@drawable/n9clock_bg_03</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="night9oclock_notice_subhead">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#7fff</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <dimen name="night9oclock_clock_width">60dp</dimen>
+    <dimen name="night9oclock_clock_height">60dp</dimen>
+    <dimen name="night9oclock_clock_height_half">30dp</dimen>
+
+    <style name="night9oclock_remind_anim">
+        <item name="android:windowEnterAnimation">@anim/remind_enter</item>
+        <item name="android:windowExitAnimation">@anim/remind_exit</item>
+    </style>
+
+    <style name="night9oclock_name_list_text">
+        <item name="android:maxHeight">120dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarThumbVertical">@drawable/base_list_scrollbar_handle</item>
+    </style>
+</resources>

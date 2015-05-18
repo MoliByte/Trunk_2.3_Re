@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/news_come_container"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/news_come_shape">
+         <com.idongler.widgets.CircleImageView
+            android:id="@+id/news_from_joinerIcon"
+            android:scaleType="fitCenter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/my_pic_default" />
+
+         <TextView
+             android:id="@+id/tvNewsNum"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="@color/Skin_White"
+             android:textSize="16sp"
+             android:layout_marginRight="30dp"
+             android:text="1条新消息" />
+
+         <ImageView
+             android:id="@+id/imageView1"
+             android:layout_width="wrap_content"
+             android:layout_height="30dp"
+             android:layout_marginRight="20dp"
+             android:src="@drawable/look_news" />
+
+    </LinearLayout>
+
+</LinearLayout>

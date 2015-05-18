@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mag_avatar_padding_top">5dp</dimen>
+
+    <dimen name="home_set_marginRight">5dp</dimen>
+
+    <dimen name="pointGroup_margin_bottom">30dp</dimen>
+    
+	<!-- 首页报表宽高 -->
+    <dimen name="chart_width">220dp</dimen>
+    <dimen name="chart_height">35dp</dimen>
+    
+    <dimen name="pm9_img">200dp</dimen>
+</resources>

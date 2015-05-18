@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Skin_White"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+<!-- pm9历史记录 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/right_conner_white_selector"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+					android:id="@+id/nine_clock_logo"
+					android:layout_width="match_parent"
+					android:layout_height="215dp"
+					android:adjustViewBounds="true"
+					android:scaleType="fitXY"
+					android:src="@drawable/home_default" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!--日期已经参与人数 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:background="#f4f4f4"
+            >
+
+            <!-- <ImageView
+                android:id="@+id/clock_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/clock_img" 
+                android:visibility="gone"/> -->
+
+            <TextView
+                android:id="@+id/pm9_time"
+                style="@style/home_list_item_time_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                 android:layout_alignParentLeft="true"
+                android:singleLine="true"
+                android:text="2015.05.06" />
+
+            <TextView
+                android:id="@+id/participant"
+                style="@style/home_list_item_time_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="45人参加" />
+            
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <!-- 本期奖品 -->
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+		<TextView
+			android:id="@+id/prize"
+			style="@style/home_list_item_time_text_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="本期奖品：" />
+	</LinearLayout>
+	<!-- 获奖名单 -->
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" 
+		android:layout_marginTop="5dp" 
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+		<TextView
+			android:id="@+id/awarded_list"
+			style="@style/home_list_item_time_text_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="获奖名单：" />
+	</LinearLayout>
+</LinearLayout>

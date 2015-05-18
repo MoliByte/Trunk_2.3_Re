@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="#f7f7f7"
+	android:orientation="vertical" >
+	<!-- 可滑动区域 -->
+	<FrameLayout
+		android:id="@+id/container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+		<ImageView
+			android:id="@+id/nine_clock_logo"
+			android:layout_width="match_parent"
+			android:layout_height="215dp"
+			android:adjustViewBounds="true"
+			android:scaleType="fitXY"
+			android:src="@drawable/home_default" />
+		<!-- 中奖公告栏 -->
+		<LinearLayout
+			android:id="@+id/zhongJianNotice"
+			android:layout_width="match_parent"
+			android:layout_height="56dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:visibility="visible" >
+			<ImageView
+				android:id="@+id/jiangbeiBtn"
+				android:layout_width="60dp"
+				android:layout_height="match_parent"
+				android:background="#649d3160"
+				android:scaleType="center"
+				android:src="@drawable/n9clock_icon_jiangbei" />
+			<LinearLayout
+				android:id="@+id/noticeTxtLayout"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="#649d3160"
+				android:gravity="center_vertical"
+				android:orientation="horizontal" >
+				<TextView
+					android:id="@+id/noticeTxt"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center_vertical"
+					android:textColor="#efff"
+					android:textSize="16sp" />
+				<ImageView
+					android:id="@+id/noticeCloseBtn"
+					android:layout_width="56dp"
+					android:layout_height="match_parent"
+					android:scaleType="center"
+					android:src="@drawable/n9clock_btn_close_02" />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_gravity="bottom|center_vertical"
+			android:background="#77000000"
+			android:orientation="horizontal"
+			android:visibility="gone" >
+			<TextView
+				android:id="@+id/nine_clock_title"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_weight="1"
+				android:singleLine="true"
+				android:text=""
+				android:textColor="#f0eff0"
+				android:textSize="16sp" />
+		</LinearLayout>
+	</FrameLayout>
+	<!-- 晚九点倒计时 -->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:gravity="center"
+		android:orientation="horizontal" >
+		<ImageView
+			android:layout_width="25dp"
+			android:layout_height="25dp"
+			android:layout_gravity="center"
+			android:layout_marginRight="5dp"
+			android:background="@drawable/testing_indicator" />
+		<TextView
+			style="@style/pm9_txt_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginRight="10dp"
+			android:text="本期话题" />
+		<View
+			android:layout_width="2dp"
+			android:layout_height="20dp"
+			android:layout_gravity="center"
+			android:background="#212121" />
+		<TextView
+			android:id="@+id/pm9_status_tips"
+			style="@style/pm9_txt_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="5dp"
+			android:text="距离开始:" />
+		<LinearLayout
+			android:id="@+id/going_start"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:clickable="false"
+			android:orientation="horizontal"
+			android:visibility="visible" 
+			
+			>
+			<RelativeLayout
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				android:gravity="center"
+				>
+				<TextView
+					android:id="@+id/hour"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:text="00"
+					android:textColor="@color/pm9_tip_color"
+					android:textSize="18sp" />
+			</RelativeLayout>
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text=":"
+					android:textColor="@color/pm9_tip_color"
+					android:textSize="18sp" />
+			<RelativeLayout
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				>
+				<TextView
+					android:id="@+id/minute"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_gravity="center"
+					android:text="00"
+					android:textColor="@color/pm9_tip_color"
+					android:textSize="18sp" />
+			</RelativeLayout>
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text=":"
+					android:textColor="@color/pm9_tip_color"
+					android:textSize="18sp" />
+			<RelativeLayout
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				>
+				<TextView
+					android:id="@+id/seconds"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_gravity="center"
+					android:text="00"
+					android:textColor="@color/pm9_tip_color"
+					android:textSize="18sp" />
+			</RelativeLayout>
+		</LinearLayout>
+		<ImageView
+			android:id="@+id/nine_clock_introduce"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_gravity="center"
+			android:layout_marginLeft="15dp"
+			android:background="@drawable/nine_clock_introduce" />
+	</LinearLayout>
+	
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.2dip"
+		android:alpha="0.4"
+		android:background="#e8e8e8" />
+	<!-- 晚九点主题内容 -->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
+		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/nine_clock_content"
+			style="@style/home_list_item_author_name_text_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:text="" />
+	</LinearLayout>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.2dip"
+		android:layout_marginTop="15dip"
+		android:alpha="0.4"
+		android:background="#e8e8e8" />
+	<!-- 晚九点活动 -->
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center|left"
+			android:orientation="horizontal" >
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center|left"
+				android:layout_marginLeft="10dp"
+				android:orientation="horizontal" >
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="今晚"
+					android:textColor="#212121"
+					android:textSize="18sp" />
+				<TextView
+					style="@style/night9oclock_notice_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="@string/night9oclock_start_time" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="点"
+					android:textColor="#212121"
+					android:textSize="18sp" />
+			</LinearLayout>
+			<!--
+            <LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:clickable="false"
+				android:orientation="horizontal"
+				android:visibility="gone" >
+				晚九点状态 火热进行中、准时开启
+				<TextView
+					style="@style/night9oclock_notice_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:clickable="false"
+					android:text="准时开启!" 
+					android:visibility="gone"/>
+			</LinearLayout>
+			-->
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center|right"
+			android:orientation="horizontal"
+			android:padding="10dp" >
+			<!-- 活动即将开始 -->
+			<RelativeLayout
+				android:id="@+id/be_start"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center|right"
+				android:background="@drawable/btn_round_corner_layout_pm9_v2"
+				android:clickable="false"
+				android:padding="8dp"
+				android:visibility="gone" >
+				<TextView
+					android:id="@+id/nine_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_gravity="center"
+					android:text="即将开启"
+					android:textColor="#fff"
+					android:textSize="20sp" />
+			</RelativeLayout>
+			<!-- 活动结束 -->
+			<RelativeLayout
+				android:id="@+id/over"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center|right"
+				android:background="@drawable/btn_round_corner_layout_pm9_v2"
+				android:clickable="false"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:visibility="gone" >
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_gravity="center"
+					android:padding="8dp"
+					android:text="活动已结束"
+					android:textColor="#fff"
+					android:textSize="20sp" />
+			</RelativeLayout>
+			<!-- 活动 进行中 -->
+			<RelativeLayout
+				android:id="@+id/get_in"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center|right"
+				android:background="@drawable/btn_round_corner_layout"
+				android:clickable="true"
+				android:focusable="true"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:visibility="visible" >
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_gravity="center"
+					android:padding="8dp"
+					android:text="进入讨论"
+					android:textColor="#fff"
+					android:textSize="20sp" />
+			</RelativeLayout>
+		</LinearLayout>
+	</FrameLayout>
+	
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="15dip"
+		android:background="#cccc" />
+	
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/Skin_White" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_alignParentLeft="true"
+			android:layout_gravity="center"
+			android:text="往期回顾"
+			android:padding="8dp"
+			android:textColor="#9b9b9b"
+			android:textSize="16sp" />
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_alignParentRight="true"
+			android:layout_gravity="center"
+			android:text=">>"
+			android:padding="8dp"
+			android:textColor="#9b9b9b"
+			android:textSize="16sp" />
+	</RelativeLayout>
+</LinearLayout>

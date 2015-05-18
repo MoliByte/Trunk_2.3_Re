@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_selector"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Skin_White"
+        android:gravity="top" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <com.idongler.widgets.CircleImageView
+                android:id="@+id/skinJoinerIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/my_pic_default" />
+
+            <TextView
+                android:id="@+id/skinJoinerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="默默哒"
+                android:textColor="#3d3d3d"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/skinJoinAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赞了你的测试"
+                android:layout_marginTop="10dp"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#f5f4f4"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="20dp"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/tvSkinPart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="完成 U区 测试"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#8c8c8c"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tvWaterValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="水 41%"
+                        android:textColor="#8c8c8c"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/water_small_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tvOilValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="油 35%"
+                        android:textColor="#8c8c8c"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/oil_small_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tvFlexibleValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="弹 23"
+                        android:textColor="#8c8c8c"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/flexible_small_icon" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/skinJoinTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="1分钟前"
+                android:textColor="#8c8c8c"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+	 <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f9f5f2" />
+</LinearLayout>

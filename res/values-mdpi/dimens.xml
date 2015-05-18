@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mag_avatar_padding_top">10dp</dimen>
+
+    <dimen name="ct_top">50dp</dimen>
+    <dimen name="ct_left">90dp</dimen>
+
+    <dimen name="ct_text_top">180dp</dimen>
+    <dimen name="ct_text_left">80dp</dimen>
+
+    <dimen name="home_set_marginRight">10dp</dimen>
+    <dimen name="pointGroup_margin_bottom">35dp</dimen>
+    
+    <!-- 首页报表宽高 -->
+    <dimen name="chart_width">200dp</dimen>
+    <dimen name="chart_height">35dp</dimen>
+    
+    <dimen name="pm9_img">200dp</dimen>
+    
+</resources>

@@ -1,0 +1,389 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0fff"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.33"
+                    android:background="#d4d4d4" />
+
+                <TextView
+                    android:id="@+id/tvcategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="请连接肌肤管家"
+                    android:textColor="#a6a6a6"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imageView_testing_introduce"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/testing_introduce" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.33"
+                    android:background="#d4d4d4" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" >
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArcOut"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="30dp"
+                    seekarc:arcColor="#ace6f7"
+                    seekarc:clockwise="true"
+                    seekarc:max="0"
+                    seekarc:progressColor="#ace6f7"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="360"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArc"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:padding="30dp"
+                    seekarc:arcColor="#e0e0e0"
+                    seekarc:clockwise="true"
+                    seekarc:max="100"
+                    seekarc:progressColor="#5cccff"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="300"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArcOut2"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="30dp"
+                    android:visibility="invisible"
+                    seekarc:max="0"
+                    seekarc:progressColor="#fce3a9"
+                    seekarc:rotation="360"
+                    seekarc:arcColor="#fce3a9"
+                    seekarc:clockwise="true"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="360"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArc2"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:padding="30dp"
+                    android:visibility="invisible"
+                    seekarc:arcColor="#e0e0e0"
+                    seekarc:clockwise="true"
+                    seekarc:max="100"
+                    seekarc:progressColor="#fac546"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="300"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArcOut3"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="30dp"
+                    android:visibility="invisible"
+                    seekarc:arcColor="#6fd97a"
+                    seekarc:clockwise="true"
+                    seekarc:max="0"
+                    seekarc:progressColor="#6fd97a"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="360"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.triggertrap.seekarc.SeekArc
+                    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/seekArc3"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:padding="30dp"
+                    android:visibility="invisible"
+                    seekarc:arcColor="#e0e0e0"
+                    seekarc:clockwise="true"
+                    seekarc:max="100"
+                    seekarc:progressColor="#22ac38"
+                    seekarc:rotation="360"
+                    seekarc:startAngle="0"
+                    seekarc:sweepAngle="360"
+                    seekarc:thumb="@drawable/seek_bar_bg"
+                    seekarc:touchInside="true" />
+
+                <com.idongler.widgets.CircleImageView
+                    android:id="@+id/civIntroduce"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp" />
+
+                <TextView
+                    android:id="@+id/tvLastTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewStandard"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#a6a6a6"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textViewStandard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/seekArc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:id="@+id/seekArcProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewStandard"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:textSize="40sp" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekArcProgress"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:src="@drawable/water_small_icon" />
+
+                    <TextView
+                        android:id="@+id/textView_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/gridViewTesting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/seekArc"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:numColumns="3" >
+                </GridView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageViewSelectFace"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/testing_select_face" />
+
+                    <TextView
+                        android:id="@+id/textViewSelectFace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="选择部位"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="颜值"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewSkinScore"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/axis_num"
+                        android:gravity="center"
+                        android:textColor="#5cccff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/linearLayout11"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/imageViewTestingBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/seekbartestingaxis" />
+
+                    <ImageView
+                        android:id="@+id/imageViewIndicate"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/seekbartestingdot" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="警示"
+                    android:textColor="#FF8C00"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textViewStandardSkinScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="标准"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="极致"
+                    android:textColor="#76EE00"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/imageViewTrumpet"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/testing_indicator" />
+
+                <TextView
+                    android:id="@+id/textViewHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#979797"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

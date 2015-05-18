@@ -1,0 +1,72 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "id": "1",
+            "min_temp": "-100",
+            "max_temp": "-11",
+            "affect": "3"
+        },
+        {
+            "id": "2",
+            "min_temp": "-10",
+            "max_temp": "0",
+            "affect": "3"
+        },
+        {
+            "id": "3",
+            "min_temp": "1",
+            "max_temp": "5",
+            "affect": "2"
+        },
+        {
+            "id": "4",
+            "min_temp": "6",
+            "max_temp": "10",
+            "affect": "1"
+        },
+        {
+            "id": "5",
+            "min_temp": "11",
+            "max_temp": "15",
+            "affect": "1"
+        },
+        {
+            "id": "6",
+            "min_temp": "16",
+            "max_temp": "20",
+            "affect": "0"
+        },
+        {
+            "id": "7",
+            "min_temp": "21",
+            "max_temp": "25",
+            "affect": "0"
+        },
+        {
+            "id": "8",
+            "min_temp": "26",
+            "max_temp": "30",
+            "affect": "-1"
+        },
+        {
+            "id": "9",
+            "min_temp": "31",
+            "max_temp": "35",
+            "affect": "-2"
+        },
+        {
+            "id": "10",
+            "min_temp": "36",
+            "max_temp": "40",
+            "affect": "-3"
+        },
+        {
+            "id": "11",
+            "min_temp": "41",
+            "max_temp": "100",
+            "affect": "-3"
+        }
+    ]
+}

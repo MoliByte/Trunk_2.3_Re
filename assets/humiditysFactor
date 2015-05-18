@@ -1,0 +1,36 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "id": "1",
+            "min_hum": "0",
+            "max_hum": "38",
+            "affect": "2"
+        },
+        {
+            "id": "2",
+            "min_hum": "39",
+            "max_hum": "45",
+            "affect": "1"
+        },
+        {
+            "id": "3",
+            "min_hum": "46",
+            "max_hum": "55",
+            "affect": "0"
+        },
+        {
+            "id": "4",
+            "min_hum": "56",
+            "max_hum": "65",
+            "affect": "-1"
+        },
+        {
+            "id": "5",
+            "min_hum": "66",
+            "max_hum": "100",
+            "affect": "2"
+        }
+    ]
+}

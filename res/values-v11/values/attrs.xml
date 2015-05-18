@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="circle">
+        <attr name="color" format="color"/>
+        <attr name="stroke" format="boolean"/>
+        <attr name="scalecolor" format="color"/>
+        <!--起始角度-->
+        <attr name="start" format="integer"/>
+        <!--圆心角角度-->
+        <attr name="angle" format="integer"/>
+        <!--起始角度-->
+        <attr name="scaleStart" format="integer"/>
+        <!--圆心角角度-->
+        <attr name="scaleAngle" format="integer"/>
+
+        <!--圆角半径(矩形用)
+        <attr name="radius" format="integer"/>-->
+    </declare-styleable>
+
+
+    <declare-styleable name="edittext">
+        <attr name="newhint" format="string"/>
+        <attr name="hintbackground" format="color"/>
+        <attr name="hintcolor" format="color"/>
+        <attr name="hintsize" format="integer"/>
+    </declare-styleable>
+    
+</resources>

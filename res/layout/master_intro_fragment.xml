@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner_layout"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="所在机构"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="克丽缇娜上海大华店"
+            android:textColor="#000" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_corner_layout"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="个人简介"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dip"
+            android:text="尼可，资深美容专家，中国最著名的跨媒体美容护肤意见领袖，全中国流量第一的美容博客，芳玑AFRELLA品牌创立者，尼可美妍榜NIC BEAUTY LIST创立人。具有很强的美容品分析能力，熟知最新国际美容科技资讯，亲身试验过不计其数的保养品。著有美容护肤书籍《跟着尼可变美丽Ⅰ、Ⅱ、Ⅲ》系列书籍三本，创立全国第一本美容护肤类APP个人杂志《尼可美妍 》。"
+            android:textColor="#333333" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/title_back_color"
+	android:orientation="vertical" >
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/top_bar_height"
+		android:background="@color/title_back_color" >
+		<ImageView
+			android:id="@+id/backBtn"
+			style="@style/back_image"
+			android:layout_width="@dimen/back_button_width"
+			android:layout_height="match_parent"
+			android:padding="@dimen/back_button_padding"
+			android:visibility="visible" />
+		<TextView
+			style="@style/app_title_text_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:text="意见反馈" />
+		<TextView
+			android:id="@+id/toRegisterBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerInParent="true"
+			android:layout_marginRight="20dp"
+			android:text=""
+			android:textColor="#fff"
+			android:textSize="16sp" />
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1px"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:background="@color/title_down_line" />
+	</RelativeLayout>
+	<!--
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:layout_marginRight="10dip"
+	        android:layout_marginTop="10dp"
+	        android:orientation="vertical" >
+	        <include layout="@layout/suggestion_listview_head"/>
+	    </LinearLayout> 
+	-->
+	
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+		<com.base.pulltorefresh.view.PullToRefreshListView
+			xmlns:ptr="http://schemas.android.com/apk/res-auto"
+			android:id="@+id/suggestionDataListView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="50dp"
+			android:cacheColorHint="#00000000"
+			android:divider="#19000000"
+			android:dividerHeight="0dp"
+			android:fadingEdge="none"
+			android:fastScrollEnabled="false"
+			android:footerDividersEnabled="false"
+			android:headerDividersEnabled="false"
+			android:scrollbars="none"
+			android:smoothScrollbar="false"
+			ptr:ptrAnimationStyle="flip"
+			ptr:ptrDrawableEnd="@drawable/refresh_ptr_flip"
+			ptr:ptrDrawableStart="@drawable/refresh_ptr_flip"
+			ptr:ptrHeaderBackground="#fff"
+			ptr:ptrHeaderSubTextColor="@color/title_bg"
+			ptr:ptrHeaderTextColor="@color/title_bg"
+			ptr:ptrMode="both" />
+		<include layout="@layout/suggest_feedback_send_message" />
+	</FrameLayout>
+</LinearLayout>

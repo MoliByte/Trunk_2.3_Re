@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/title_back_color" >
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/back_image"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/back_button_padding" />
+
+        <TextView
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="个人信息" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f3f3f3"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f3f3f3"
+                    android:orientation="vertical"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:id="@+id/sweep_scan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip"
+                        android:visibility="visible" >
+
+                        <ImageView
+                            android:id="@+id/character_arraow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="头像" />
+
+                        <com.idongler.widgets.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/avatarImg"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/character_arraow"
+                            android:scaleType="fitXY" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip"
+                        android:visibility="gone" />
+
+                    <!-- 昵称 -->
+
+                    <RelativeLayout
+                        android:id="@+id/update_nick_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip" >
+
+                        <ImageView
+                            android:id="@+id/arrows"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="昵称" />
+
+                        <TextView
+                            android:id="@+id/nick_name"
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/arrows"
+                            android:maxLength="8"
+                            android:singleLine="true"
+                            android:text="Lenny" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip" />
+
+                    <!-- 出生年月日 -->
+
+                    <RelativeLayout
+                        android:id="@+id/birthday_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip" >
+
+                        <ImageView
+                            android:id="@+id/arrows_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="出生日期" />
+
+                        <TextView
+                            android:id="@+id/birthday"
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/arrows_b"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:text="1990-01-23" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip" />
+
+                    <!--  -->
+                    <!-- 性别 -->
+
+                    <RelativeLayout
+                        android:id="@+id/sex_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip" >
+
+                        <ImageView
+                            android:id="@+id/arrows_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="性别" />
+
+                        <TextView
+                            android:id="@+id/sex"
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/arrows_s"
+                            android:text="男" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip" />
+                    <!--  -->
+                    <!-- 肤质 -->
+
+                    <RelativeLayout
+                        android:id="@+id/skin_type_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip" >
+
+                        <ImageView
+                            android:id="@+id/arrows_skin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="肤质" />
+
+                        <TextView
+                            android:id="@+id/skin_type"
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/arrows_skin"
+                            android:text="混合型肌肤" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip" />
+                    <!--  -->
+                    <!-- 地区 -->
+
+                    <RelativeLayout
+                        android:id="@+id/regionView_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/toast_round_corner"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingRight="10dip" >
+
+                        <ImageView
+                            android:id="@+id/arrows_r"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/arrows" />
+
+                        <TextView
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dip"
+                            android:text="所在地" />
+
+                        <TextView
+                            android:id="@+id/region"
+                            style="@style/mine_and_sys_setting_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toLeftOf="@+id/arrows_r"
+                            android:maxEms="9"
+                            android:singleLine="true"
+                            android:text="上海浦东" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dip" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/comfirmBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/btn_round_corner_layout"
+                    android:clickable="true"
+                    android:focusable="true" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="完成"
+                        android:textColor="#fff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

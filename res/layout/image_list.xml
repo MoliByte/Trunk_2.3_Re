@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@color/title_back_color"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/app_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="图片" />
+
+        <!-- 返回首页 -->
+
+        <RelativeLayout
+            android:id="@+id/backHome"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true" >
+
+            <ImageView
+                android:id="@+id/backBtn"
+                style="@style/back_image"
+                android:layout_width="40dp"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/title_down_line" />
+    </RelativeLayout>
+    
+    <GridView
+        android:id="@+id/images_gv"
+        android:layout_below="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:gravity="center"
+        android:horizontalSpacing="@dimen/spacing_medium"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:padding="@dimen/padding_small"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/spacing_medium" >
+    </GridView>
+
+    <include layout="@layout/image_loading_layout" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_selector"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/ivMerchantLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/my_collect" />
+
+        <TextView
+            android:id="@+id/tvMerchantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#7e7e7e"
+            android:textSize="14sp"
+            android:text="上海商路网络有限公司" />
+
+    </LinearLayout>
+    
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e8e8e8" />
+
+</LinearLayout>

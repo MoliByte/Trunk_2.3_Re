@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_selector"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical" >
+
+        <com.idongler.widgets.CircleImageView
+            android:id="@+id/circleImageViewUserImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/my_pic_default" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="长发为谁盘起"
+                android:textColor="@color/home_name"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewUserState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="干性肌肤 23岁"
+                android:textColor="@color/home_state"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewPublishTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="3分钟前"
+            android:textColor="@color/home_state"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewBig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/complete" />
+
+        <TextView
+            android:id="@+id/textViewTestPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成T区测试"
+            android:textColor="@color/home_name"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_vertical_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水 "
+            android:textColor="@color/home_text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvWaterValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35.6% "
+            android:textColor="@color/home_num"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/water_small_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="油 "
+            android:textColor="@color/home_text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvOilValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.2% "
+            android:textColor="@color/home_num"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/oil_small_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="弹 "
+            android:textColor="@color/home_text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvFlexibleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23 "
+            android:textColor="@color/home_num"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/flexible_small_icon" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/home_vertical_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutComment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/ivComment"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/no_comment_btn" />
+
+            <TextView
+                android:id="@+id/tvCommentNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评论 106"
+                android:textColor="@color/home_num"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="15dp"
+            android:background="@color/home_vertical_line" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutSupport"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/ivSupport"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/no_support_btn" />
+
+            <TextView
+                android:id="@+id/tvSupportNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赞 22"
+                android:textColor="@color/home_num"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="15dp"
+            android:background="@color/home_vertical_line" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutCollect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/ivCollect"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/collect_yes" />
+
+            <TextView
+                android:id="@+id/tvCollect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏"
+                android:textColor="@color/home_num"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/body_bg"
+        android:layout_marginTop="5dp"
+        android:layout_height="10dp" />
+
+</LinearLayout>

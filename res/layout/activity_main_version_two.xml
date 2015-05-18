@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff" >
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#eaeaea"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/title_down_line" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btn_home"
+                style="@style/tab_rb_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_botton_home"
+                android:text="肌肤管家" />
+
+            <RadioButton
+                android:id="@+id/btn_activity"
+                style="@style/tab_rb_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_botton_action"
+                android:text="活动" />
+
+            <RadioButton
+                android:id="@+id/btn_test"
+                style="@style/tab_rb_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:drawableBottom="@drawable/radio_botton_test"
+                android:gravity="center|bottom"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="@drawable/radio_botton_home_color"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/btn_nine_clock"
+                style="@style/tab_rb_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_botton_nine_point"
+                android:text="晚九点" />
+
+            <RadioButton
+                android:id="@+id/btn_mine"
+                style="@style/tab_rb_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_botton_mine"
+                android:text="我的" />
+        </RadioGroup>
+			
+        <!-- android:onClick="onTabClicked"  my_has_message   radio_botton_mine-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_bottom" />
+
+
+    <View
+        android:id="@+id/popup_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/facial_popup_back"
+        android:visibility="gone" />
+
+</RelativeLayout>

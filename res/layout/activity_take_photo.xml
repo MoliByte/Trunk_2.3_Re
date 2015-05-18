@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#303030">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/icon_light"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:drawablePadding="5dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_selector"
+            android:textColor="#fff2e9e9"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:checked="false"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:id="@+id/lightBtn"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_camera"
+            android:scaleType="center"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_selector"
+            android:id="@+id/cameraBtn"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:id="@+id/container">
+        <!-- 显示预览图形 -->
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/bg_border_stroke"
+            android:id="@+id/userInfoGroup">
+
+            <View
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:id="@+id/avatarImg"
+                android:layout_gravity="center"
+                android:background="@drawable/ct_oval_box_bg"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_logo_text"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#bbf9e4c5"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:id="@+id/nickNameTxt"
+                style="@style/test_share_photo_text"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/bg_border_stroke"
+            android:layout_marginTop="@dimen/ct_top"
+            android:layout_marginLeft="@dimen/ct_left"
+            android:layout_gravity="top|left"
+            android:gravity="center_horizontal"
+            android:id="@+id/ctImageGroup">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/ctImage"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/bg_border_stroke"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/ct_text_top"
+            android:layout_marginLeft="@dimen/ct_text_left"
+            android:gravity="center_horizontal"
+            android:layout_gravity="top|left"
+            android:id="@+id/ctTextGroup">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#fff"
+                android:id="@+id/valueTxt"
+                android:layout_marginBottom="5dp"
+                style="@style/test_share_photo_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/test_ct_value_desc_width"
+                android:textSize="16sp"
+                android:textColor="#fff"
+                android:id="@+id/valueDescTxt"
+                style="@style/test_share_photo_text"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:paddingRight="5dp"
+            android:src="@drawable/icon_back"
+            android:scaleType="center"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_selector"
+            android:id="@+id/backBtn"
+            />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icon_camera_take"
+            android:scaleType="fitCenter"
+            android:layout_centerInParent="true"
+            android:background="@drawable/oval_box_selector"
+            android:id="@+id/takePhotoBtn"
+            />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_image"
+            android:scaleType="center"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_selector"
+            android:id="@+id/openImgBtn"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

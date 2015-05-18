@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <!--实心-->
+            <solid android:color="#1000"/>
+            <size
+                android:height="@dimen/main_skin_test_width"
+                android:width="@dimen/main_skin_test_height" />
+        </shape>
+    </item>
+
+</selector>

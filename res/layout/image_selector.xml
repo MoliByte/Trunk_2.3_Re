@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_selector_cell_height"
+        android:text="选择图片..."
+        style="@style/img_selector_title"
+        android:id="@+id/dialogTitle"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/img_selector_line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_selector_cell_height"
+        android:text="拍照"
+        style="@style/img_selector_cell_item"
+        android:id="@+id/gotoPhotoBut"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/img_selector_line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_selector_cell_height"
+        android:text="从相册中选取"
+        style="@style/img_selector_cell_item"
+        android:id="@+id/gotoImageLibBut"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/img_selector_line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_selector_cell_height"
+        android:text="取消"
+        style="@style/img_selector_cell_item"
+        android:id="@+id/cancelBut"
+        />
+
+</LinearLayout>

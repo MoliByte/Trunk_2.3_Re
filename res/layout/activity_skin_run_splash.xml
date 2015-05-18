@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/transparent"
+        >
+    <!--广告切换页-->
+    <android.support.v4.view.ViewPager
+            android:id="@+id/viewPaper"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+    <!--显示当前页的小圆点-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/pointGroup_margin_bottom"
+        android:id="@+id/pointGroup">
+    </LinearLayout>
+</RelativeLayout>
+

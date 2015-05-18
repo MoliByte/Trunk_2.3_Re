@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    style="@style/cale_context_line"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="13dp"
+            android:background="@color/main_line"
+            android:layout_gravity="center"/>
+
+        <com.idongler.widgets.CircleView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:color="@color/main_line"
+                app:stroke="true"
+                android:layout_gravity="center"/>
+        <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/main_line"
+                android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/testHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textColor="@color/main_font"
+                android:textSize="24sp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_font"
+                    android:text=":"/>
+            <TextView
+                    android:id="@+id/testMinute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textColor="@color/main_font"
+                    android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="T 区"
+                android:textColor="@color/main_font"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/diary_icon_water_25"/>
+
+            <TextView
+                android:id="@+id/waterTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34"
+                android:textColor="@color/main_font"
+                android:textSize="18sp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@color/main_font"/>
+            <TextView
+                    android:id="@+id/waterDecTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="13sp"
+                    android:textColor="@color/main_font"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="%"
+                    android:textColor="@color/main_font"
+                    android:textSize="13sp"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/diary_icon_oil_25"/>
+
+            <TextView
+                android:id="@+id/oilTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textColor="@color/main_font"
+                android:textSize="18sp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@color/main_font"/>
+            <TextView
+                    android:id="@+id/oilDecTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="@color/main_font"
+                    android:textSize="14sp"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="%"
+                    android:textColor="@color/main_font"
+                    android:textSize="14sp"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/diary_icon_elasticity_25"/>
+
+            <TextView
+                android:id="@+id/elasticityTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="33"
+                android:textColor="@color/main_font"
+                android:textSize="18sp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@color/main_font"/>
+            <TextView
+                    android:id="@+id/elasticityDecTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textColor="@color/main_font"
+                    android:textSize="14sp"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="%"
+                    android:textColor="@color/main_font"
+                    android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+        <com.idongler.widgets.RectView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color="@color/main_line"
+                app:stroke="true"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:singleLine="false"
+                android:text="推荐内容"
+                android:textColor="@color/main_font_60"
+                android:lineSpacingMultiplier="1.2"
+                android:id="@+id/contentTxt"
+                android:textSize="12sp"/>
+
+
+    </LinearLayout>
+</LinearLayout>

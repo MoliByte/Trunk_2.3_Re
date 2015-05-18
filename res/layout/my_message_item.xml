@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_selector"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <com.idongler.widgets.CircleImageView
+                android:id="@+id/message_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/my_pic_default" />
+
+            <TextView
+                android:id="@+id/message_sender_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#3d3d3d"
+                android:textSize="12sp"
+                android:text="Lucy" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvMessageContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#303030"
+                android:textSize="14sp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="欢迎加入肌肤管家，首次注册获得50积分~" />
+
+            <LinearLayout
+                android:id="@+id/contain_linked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="visible"
+                android:background="#f5f4f4" >
+                <ImageView
+                    android:id="@+id/ivActionImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                   	android:layout_margin="10dp"
+                   	android:scaleType="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/mianmo" />
+
+                <TextView
+                    android:id="@+id/tvActionImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#303030"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:text="疯狂盖楼赢大奖！！" />
+
+            </LinearLayout>
+            
+             <TextView
+                    android:id="@+id/tvNoticeTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#8c8c8c"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="5分钟前" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f9f5f2" />
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/listView"
+                android:cacheColorHint="#00000000"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarThumbVertical="@drawable/base_list_scrollbar_handle"
+                android:dividerHeight="0dp"
+                android:divider="#0fff"
+                android:scrollbars="vertical">
+        </ListView>
+
+        <RelativeLayout
+                android:id="@+id/commentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0">
+
+            <RelativeLayout
+                    android:id="@+id/rlytSendMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal"
+                    android:background="#3a2d36"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="8dp">
+
+                <EditText
+                        android:id="@+id/commentContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/edit_box_selector"
+                        android:gravity="left|center_vertical"
+                        android:hint=";) 我也来说一说～"
+                        android:maxLines="3"
+                        android:minHeight="33dp"
+                        android:paddingLeft="10dp"
+                        android:textColor="#fff"
+                        android:paddingRight="10dp"
+                        android:layout_toRightOf="@+id/rlytEmo"
+                        android:layout_toLeftOf="@+id/sendBtn"
+                        android:scrollbars="vertical"
+                        android:textSize="18sp"/>
+                <Button
+                        android:id="@id/sendBtn"
+                        android:layout_width="70dp"
+                        android:layout_height="33dp"
+                        android:layout_alignBottom="@+id/commentContent"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/submitbtn_call_selector"
+                        android:gravity="center"
+                        android:text="发送"
+                        android:visibility="visible"
+                        android:textColor="#9fff"
+                        android:textSize="18sp"
+                        />
+
+                <RelativeLayout
+                        android:id="@id/rlytEmo"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignBottom="@+id/commentContent"
+                        android:layout_marginLeft="10dp">
+
+                    <ImageView
+                            android:id="@+id/imgView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_face"/>
+
+                    <ImageView
+                            android:id="@+id/imgViewShowKeyboard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/keyword"
+                            android:visibility="gone"
+                            />
+                </RelativeLayout>
+            </RelativeLayout>
+                <com.beabox.hjy.tt.main.night9oclock.controller.EmoGridView
+                        android:id="@+id/emoGridview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/rlytSendMessage"
+                        android:background="#4e3c43"
+                        android:visibility="gone"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:src="@drawable/icon_up"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="bottom|right"
+            android:visibility="gone"
+            android:id="@+id/upBtn"
+            />
+</FrameLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.base.pulltorefresh.view.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_merchant_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#00ffffff"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:scrollbars="none"
+        android:smoothScrollbar="false"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawableEnd="@drawable/refresh_ptr_flip"
+        ptr:ptrDrawableStart="@drawable/refresh_ptr_flip"
+        ptr:ptrHeaderBackground="#ffffff"
+        ptr:ptrHeaderSubTextColor="@color/title_bg"
+        ptr:ptrHeaderTextColor="@color/title_bg"
+        ptr:ptrMode="both" >
+    </com.base.pulltorefresh.view.PullToRefreshListView>
+
+    <ImageView
+        android:id="@+id/no_my_merchant"
+        style="@style/back_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/no_mine_message"
+        android:visibility="visible" />
+
+</FrameLayout>

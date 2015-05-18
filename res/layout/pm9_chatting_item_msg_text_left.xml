@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp" >
+
+    <!-- 时间 -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp" >
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/chat_send_time_bg"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="00:00"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp" >
+
+        <LinearLayout
+            android:id="@+id/iv_layout"
+            android:layout_width="@dimen/size_avatar"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- <ImageView
+                android:id="@+id/iv_userhead"
+                android:layout_width="@dimen/size_avatar"
+                android:layout_height="@dimen/size_avatar"
+                android:background="@drawable/mini_avatar_shadow"
+                android:scaleType="fitXY" /> -->
+                <com.idongler.widgets.CircleImageView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                     android:id="@+id/iv_userhead"
+	                android:layout_width="@dimen/size_avatar"
+	                android:layout_height="@dimen/size_avatar"
+	                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/tv_userid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="格格" />
+        </LinearLayout>
+
+         <ImageView
+            android:id="@+id/iv_sendPicture"
+            android:src="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_toRightOf="@id/iv_layout"
+            android:background="@drawable/chatfrom_bg"
+            android:visibility="gone"
+            />
+         
+        <TextView
+            android:id="@+id/tv_chatcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="15dip"
+            android:layout_toRightOf="@id/iv_layout"
+            android:background="@drawable/chatfrom_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="left|center"
+            android:lineSpacingExtra="2dp"
+            android:minHeight="50dp"
+            android:textColor="#000"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</LinearLayout>

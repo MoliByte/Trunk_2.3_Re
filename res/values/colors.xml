@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- window background color -->
+    <color name="activity_background">#fff</color>
+
+    <!-- 标题样背影和下边框颜色 -->
+    <color name="top_bar_background">#fff</color>
+    <color name="top_bar_border">#464646</color>
+
+    <!-- edite , text 下划线颜色 -->
+    <color name="item_bottom_border">#dddddd</color>
+
+    <!-- 设置中功能项背景色、按下时背景色 -->
+    <color name="setting_item_background">#fff</color>
+    <color name="setting_item_pressed_background">#e6e6e6</color>
+
+    <!-- edite 背景色与获得焦点时颜色 -->
+    <color name="edit_background">#fff</color>
+    <color name="edit_focused_bottom_border">#bdbfbf</color>
+    <color name="edit_focused_border">#aad1c85c</color>
+    <!-- 区域滚轮线条颜色 -->
+    <color name="province_line_border">#C7C7C7</color>
+
+    <!-- 文本按下背影色 -->
+    <color name="text_pressed_background">#e6e6e6</color>
+
+    <!-- 字体颜色 -->
+    <color name="main_font">#fff</color>
+    <!-- 字体颜色50%不透明 -->
+    <color name="main_font_50">#7fffffff</color>
+    <!-- 字体颜色60%不透明 -->
+    <color name="main_font_60">#99ffffff</color>
+    <!-- 字体颜色70%不透明 -->
+    <color name="main_font_70">#b2ffffff</color>
+    <!-- 字体颜色80%不透明 -->
+    <color name="main_font_80">#ccffffff</color>
+    <!-- 字体颜色90%不透明 -->
+    <color name="main_font_90">#e6ffffff</color>
+    
+    
+
+    <drawable name="tabbar_item_normal_gray">#b5b5b6</drawable>
+    <drawable name="tabbar_item_transparen">#00000000</drawable>
+    <drawable name="tabbar_item_half_transparen">#22000000</drawable>
+
+    <!-- 线框 线的颜色 -->
+    <color name="main_line">#22ffffff</color>
+    <color name="white_10">#19ffffff</color>
+
+    <drawable name="coach_marks_bg">#b0000000</drawable>
+
+    <color name="take_photo_share_bg">#fff2e9e9</color>
+
+    <!-- 主框架字体选择颜色 -->
+    <color name="tab_selector_tv_color">#717171</color>
+    <color name="head_title_text_color">#000000</color>
+
+    <!-- 环信Color -->
+    <color name="common_top_bar_blue">#4ebcd3</color>
+    <color name="btn_login_normal">#007086</color>
+    <color name="btn_login_pressed">#303744</color>
+    <color name="btn_logout_normal">#d33f3f</color>
+    <color name="btn_logout_pressed">#DA5A4D</color>
+    <color name="btn_register_normal">#2dafa3</color>
+    <color name="btn_register_pressed">#4ebcd3</color>
+    <color name="common_bottom_bar_normal_bg">#2d2f31</color>
+    <color name="common_bottom_bar_selected_bg">#161718</color>
+    <color name="common_botton_bar_blue">#2ea7e0</color>
+    <color name="common_bg">#fcfcfc</color>
+    <color name="btn_pressed_green_solid">#B6DA53</color>
+    <color name="divider_list">#cccccc</color>
+    <color name="top_bar_normal_bg">#4ebcd3</color>
+    <color name="error_item_color">#F6EBE6</color>
+    <color name="bottom_bar_normal_bg">#2D2F31</color>
+    <color name="bottom_text_color_normal">#ffffff</color>
+    <color name="btn_white_normal">#f7f8f8</color>
+    <color name="btn_white_pressed">#b5b5b6</color>
+    <color name="btn_green_noraml">#68C270</color>
+    <color name="btn_green_pressed">#6FCD78</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="btn_gray_pressed_status">#b5b5b6</color>
+    <color name="btn_gray_pressed">#666667</color>
+    <color name="btn_blue_normal">#1e90ff</color>
+    <color name="btn_blue_pressed">#0066FF</color>
+    <color name="orange">#FFA500</color>
+    <color name="gray_pressed">#b5b5b6</color>
+    <color name="gray_normal">#666667</color>
+    <color name="grid_state_pressed">#1Affffff</color>
+    <color name="grid_state_focused">#80000000</color>
+    <color name="voip_interface_text_color">#bababa</color>
+    <color name="black_deep">#FF000000</color>
+
+    <!--  -->
+    <color name="coin_text_color">#ff73bc</color>
+
+    <!-- Body Background -->
+    <color name="body_bg">#f7f7f7</color>
+    <color name="title_bg">#ff73bc</color>
+    <color name="red">#ffe2231a</color>
+    <color name="dark_red">#ff510209</color>
+    <color name="dark_blue">#ff00ffff</color>
+    <color name="line_blue">#dd63B8FF</color>
+    <color name="water_blue">#00BFFF</color>
+    <color name="oil_yellow">#CD9B1D</color>
+    <color name="flexible_green">#228B22</color>
+    <color name="test_deep_item_back_dwhite">#eeffffff</color>
+    <color name="test_deep_item_back_lwhite">#55ffffff</color>
+    <color name="test_deep_gray">#888</color>
+    <!-- 水份 -->
+    <color name="test_water_num">#5cccff</color>
+    <color name="test_water_num_standard">#5cccff</color>
+    <color name="test_water_text">#d4d4d4</color>
+    <!-- 油份 -->
+    <color name="test_oil_num">#fac546</color>
+    <color name="test_oil_num_standard">#fac546</color>
+    <color name="test_oil_text">#d4d4d4</color>
+    <!-- 弹性 -->
+    <color name="test_flex_num">#22ac38</color>
+    <color name="test_flex_num_standard">#22ac38</color>
+    <color name="test_flex_text">#d4d4d4</color>
+    <!-- 灰色字颜色 -->
+    <color name="test_gray">#b5acaf</color>
+    <!-- 深度页面字体颜色 -->
+    <color name="deep_test_gridhead_gray">#7f7f7f</color>
+    <color name="deep_test_gridbottom_gray">#949494</color>
+    <!-- 面膜测试按钮颜色 -->
+    <color name="facial_button_pgray">#DCDCDC</color>
+    <color name="facial_button_upgray">#E0E0E0</color>
+    <!-- 面膜测试背景色 -->
+	<color name="facial_result_back">#77ffffff</color>
+	<!-- 截图背景灰 -->
+	<color name="shot_screen_gray">#77000000</color>
+	
+	<!-- 测试结果红绿色 -->
+	<color name="facial_result_green">#00ff00</color>
+	<color name="facial_result_red">#ff0000</color>
+	
+	<!-- 白色 -->
+	<color name="Skin_White">#ffffff</color>
+	
+	<!-- 字体深灰色 -->
+	<color name="text_deep_gray">#646464</color>
+	<!-- 字体浅灰色 -->
+	<color name="text_light_gray">#949494</color>
+	<!-- 面膜测试蓝色 -->
+	<color name="facial_blue">#ace6f7</color>
+	
+	<!-- 按钮背景色和字体颜色 -->
+	<color name="button_back_gray">#EBEBEB</color>
+	<color name="button_back_pressed_gray">#55EBEBEB</color>
+	
+	
+	<color name="button_text_gray">#bbbbbb</color>
+	
+	<!-- 面膜测试浅灰色 -->
+	<color name="facial_text_light_gray">#9c9c9c</color>
+	<!-- 面膜测试浅灰色 -->
+	<color name="facial_hint_gray">#bababa</color>
+	<!-- listview 按下颜色 -->
+	<color name="listview_pressed_corlor">#ff73bc</color>
+	<!-- 开始测试面膜按钮颜色 -->
+	<color name="start_facialmask_test_color">#EEAEEE</color>
+	<color name="start_facialmask_test_pressed_color">#55EEAEEE</color>
+	<!-- App背景白 -->
+	
+	<color name="app_back_white">#ffffff</color>
+	<!-- 标题栏背景色 -->
+	<color name="title_back_color">#fbf8f6</color>
+	<!-- 标题栏线颜色 -->
+	<color name="title_down_line">#d2d2d2</color>
+	<!-- 标题字体色 -->
+	<color name="title_text_color">#2f2f2f</color>
+	<!-- 下部导航栏背景色 -->
+	<color name="action_back_color">#eeeeee</color>
+	
+	<!-- 首页标题的颜色 -->
+	<color name="home_title_corlor_light">#a0a0a0</color>
+	<color name="home_title_corlor_dark">#6d6d6d</color>
+	<!-- 面膜测试分享背景 -->
+	<color name="share_back">#f2f2f2</color>
+	
+	<!-- 首页颜色 用户名 属性 -->
+	<color name="home_name">#656565</color>
+	<color name="home_state">#aeaeae</color>
+	<color name="home_num">#c3c3c3</color>
+	<color name="home_text">#7b7b7b</color>
+	<color name="home_back">#fcf8f7</color>
+	<color name="home_vertical_line">#d4d4d4</color>
+	
+	<!-- 肌肤测试背景 -->
+	<color name="skin_test_back">#efefef</color>
+	
+	<!-- 深度测试选择部位背景色 -->
+	<color name="deep_test_white">#ffffff</color>
+	<color name="deep_test_red">#ffc2da</color>
+	
+	<!-- 我的测试页面 -->
+	
+	<color name="my_test_line_gray">#e5e5e5</color>
+	<color name="my_test_line_red">#ff73bc</color>
+	
+	<color name="my_test_text_red">#ff73bc</color>
+	<color name="my_test_text_gray">#7e7e7e</color>
+	
+	<!-- 品牌选中与未选中颜色 -->
+	<color name="brand_selected">#505050</color>
+	<color name="brand_unselect">#959595</color>
+	
+	<!-- 评论列表分隔颜色 -->
+	
+	<color name="comment_divide_line_color">#e8e8e8</color>
+	
+	<color name="translucent_black">#77000000</color>
+	
+	<!-- 我的测试消息背景颜色 间隔颜色-->
+	<color name="my_testNews_back">#f9f5f2</color>
+	
+	<color name="my_testNews_divider">#f9f5f2</color>
+	
+	
+	<!-- pm9 -->
+	<color name="pm9_tip_color">#FF73BC</color>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</resources>
