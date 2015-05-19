@@ -112,6 +112,7 @@ public class ActivityFrag extends Fragment implements OnClickListener,
 				Log.e(TAG, "action_id====>" + action.getId());
 				Bundle bundle = new Bundle();
 				bundle.putLong("activityId",action.getId());
+				bundle.putInt("status",action.getStatus());
 				Intent intent = new Intent(getActivity(),
 						ActionDiscussActivity.class);
 				intent.putExtras(bundle);

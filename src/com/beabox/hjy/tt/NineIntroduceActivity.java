@@ -17,7 +17,7 @@ import com.umeng.message.PushAgent;
  */
 public class NineIntroduceActivity extends BaseActivity {
 
-	private static final String url = "http://wx.codefan.cn/9dian/";
+	private static final String url = "http://w1.skinrun.me/static/pm9/";
     View backBut;
     WebView webView;
     ProgressBar loading;

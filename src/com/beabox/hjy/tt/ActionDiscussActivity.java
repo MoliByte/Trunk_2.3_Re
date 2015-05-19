@@ -127,6 +127,7 @@ public class ActionDiscussActivity extends BaseActivity implements
 		OnItemClickListener {
 	private static final String TAG = "ActionDiscussActivity";
 	private ArrayList<ActionCommentEntity> action_comment_list = new ArrayList<ActionCommentEntity>();
+	private ArrayList<ActionReplayEntity> replay_lists = new ArrayList<ActionReplayEntity>();
 	private ActionListAdapter adapter;
 	private PullToRefreshListView pullToRefreshListView;
 	
@@ -159,6 +160,7 @@ public class ActionDiscussActivity extends BaseActivity implements
 
 	private static long current_to_uid = -1;//
 	private static long current_comment_id = -1;
+	private static long comment_id = -1;
 	
 	private static int current_position = 0 ;
 	
@@ -172,6 +174,8 @@ public class ActionDiscussActivity extends BaseActivity implements
 	TextView day;
 	TextView hour;
 	TextView minute;
+	
+	int status = -100 ;
 	
 	String end_time = "2015-04-10 00:00:00" ;
 	String public_time = "2015-03-10 00:00:00" ;
@@ -235,7 +239,12 @@ public class ActionDiscussActivity extends BaseActivity implements
 				} else {
 					going_start.setVisibility(View.GONE);
 					action_content.setVisibility(View.VISIBLE);
-					reward_btn.setVisibility(View.VISIBLE);
+					if(status == 101){
+						reward_btn.setVisibility(View.GONE);
+					}else{
+						reward_btn.setVisibility(View.VISIBLE);
+					}
+					
 					reward_layout.setVisibility(View.VISIBLE);
 					
 					StringBuffer buffer = new StringBuffer();
@@ -262,6 +271,7 @@ public class ActionDiscussActivity extends BaseActivity implements
 		setContentView(R.layout.action_main_list);
 		
 		activityId=getIntent().getLongExtra("activityId", -1);
+		status = getIntent().getIntExtra("status", -100);
 		
 		if(activityId==-1){
 			Bundle bun = getIntent().getExtras();
@@ -592,6 +602,8 @@ public class ActionDiscussActivity extends BaseActivity implements
 	private TextView action_support_count,user_reward_list;
 	private WebView action_content ;
 	private TextView title,people ;
+	private TextView  awarded_hint;
+	private View write_address,user_reward_list_layout ;
 	private View action_support ;
 	private View view ;
 	private ImageView action_img,home_support_1,no_support_btn ;
@@ -606,6 +618,10 @@ public class ActionDiscussActivity extends BaseActivity implements
 	public void actionListViewAddHeader() {
 		view = LayoutInflater.from(this).inflate(
 				R.layout.action_main_list_view_head, null);
+		awarded_hint = (TextView) view.findViewById(R.id.awarded_hint);
+		write_address =  view.findViewById(R.id.write_address);
+		user_reward_list_layout =  view.findViewById(R.id.user_reward_list_layout);
+		
 		title = (TextView) view.findViewById(R.id.title);
 		people = (TextView) view.findViewById(R.id.people);
 		user_reward_list = (TextView) view.findViewById(R.id.user_reward_list);
@@ -636,7 +652,13 @@ public class ActionDiscussActivity extends BaseActivity implements
 			}
 		});
 		
-		
+		if(status == 101){
+			awarded_hint.setText("活动已结束，等待公布获奖名单");
+			user_reward_list.setVisibility(View.GONE);
+			write_address.setVisibility(View.GONE);
+			reward_btn.setVisibility(View.GONE);
+			
+		}
 		
 		realListView.addHeaderView(view);
 	}
@@ -798,13 +820,53 @@ public class ActionDiscussActivity extends BaseActivity implements
 			} 
 			else if ((Integer) tag == HttpTagConstantUtils.POST_COMMENT_REPLAY) {// 回复活动中的某条评论
 				if (isSuccess(statusCode)) {
+					//pageIndex = 1 ;
+					ActionCommentEntity entity = this.action_comment_list.get(current_position-2<0 ? 0 :current_position-2);
+					
+					//current_comment_id = entity.getId() ;
+					if(null != entity){
+						
+						ActionReplayEntity replayEntity = new ActionReplayEntity() ;
+						replayEntity.setId(1);
+						replayEntity.setPost_id(entity.getPost_id());
+						replayEntity.setParent_id(entity.getParent_id());
+						replayEntity.setTo_uid(entity.getFrom_uid());
+						replayEntity.setTo_nick(entity.getFrom_nick());
+						replayEntity.setFrom_uid(Long.valueOf((aCache.getAsString("uid")==null ||"".equals(aCache.getAsString("uid"))) ? "0" : aCache.getAsString("uid")));
+						replayEntity.setFrom_nick((aCache.getAsString("uid")==null ||"".equals(aCache.getAsString("nickname"))) ? "格格" : aCache.getAsString("nickname"));
+						replayEntity.setContent(mEditTextContent.getText().toString());
+						
+						if(entity.getId() != comment_id){
+							replay_lists.clear();
+							if(entity.getReplys()!=null ){
+								//replay_lists = entity.getReplys() ;
+								//replay_lists.clear();
+								//replay_lists.removeAll(entity.getReplys());
+								replay_lists.addAll(entity.getReplys());
+							}
+						}
+						
+						
+						replay_lists.add(0,replayEntity);
+						
+						comment_id = entity.getId() ;
+						entity.setReplys(replay_lists);
+						this.action_comment_list.remove(current_position-2);
+						this.action_comment_list.add(current_position-2, entity);
+						adapter = new ActionListAdapter(this.action_comment_list,getApplicationContext());
+						realListView.setAdapter(adapter);
+						current_position = current_position>0?current_position:0;
+						realListView.setSelection(current_position);
+						adapter.notifyDataSetChanged();
+					}
+					
+					
+					
 					mEditTextContent.setText("");
 					mEditTextContent.setHint("");
 					resetReplay();
-					getData();
-//					current_position = current_position>0?current_position:0;
-//					realListView.setSelection(current_position);
-//					adapter.notifyDataSetChanged();
+					//getData();
+					
 				} else {
 					AppToast.toastMsgCenter(getApplicationContext(),
 							getString(R.string.ERROR_404)).show();
@@ -878,6 +940,7 @@ public class ActionDiscussActivity extends BaseActivity implements
 		} catch (Exception e) {
 			EasyLog.e("活动详情异常......."+e.toString());
 		} finally {
+			resetReplay();
 			if (pullToRefreshListView != null) {
 				pullToRefreshListView.onRefreshComplete();
 			}
@@ -1526,12 +1589,9 @@ public class ActionDiscussActivity extends BaseActivity implements
 			Spannable spannableString = SmileUtils.getSmiledText(context, entity.getContent());
 			if("".equals(entity.getContent()) || null == entity.getContent()){
 				comment.setVisibility(View.GONE);
-			}else{
-				//SpannableString spannableString = FaceConversionUtil.getInstace()
-				//		.getExpressionString(context, entity.getContent());
-				//
-				comment.setText(spannableString, BufferType.SPANNABLE);
 			}
+			
+			comment.setText(spannableString, BufferType.SPANNABLE);
 			
 			ImageView img = (ImageView) convertView.findViewById(R.id.img);
 			

@@ -28,6 +28,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -46,6 +47,7 @@ public class ScreenShotSkinActivity extends Activity implements Observer{
 	
 	private UserEntity user;
 	
+	private String TAG="ScreenShotSkinActivity";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,9 +77,16 @@ public class ScreenShotSkinActivity extends Activity implements Observer{
 		}, 1);
 	}
 	@Override
+	protected void onPause() {
+		super.onPause();
+		Log.e(TAG, "============截图onPause");
+		getImage();
+	}
+	@Override
 	protected void onStop() {
 		super.onStop();
-		getImage();
+		Log.e(TAG, "============截图onStop");
+		
 	}
 	@Override
 	protected void onDestroy() {
@@ -106,18 +115,20 @@ public class ScreenShotSkinActivity extends Activity implements Observer{
 	}
 	
 	private void getImage(){
-		
+		Log.e(TAG, "============截图getImage111");
 		ScrollView view=(ScrollView) findViewById(R.id.screen_shot_skin_container);
 		Bitmap bitmap=ImageUtil.getBitmapByView(view);
 		String imageName="";
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		imageName=sdf.format(new Date())+".png";
-		
+		Log.e(TAG, "============截图getImage222");
 		FileUtil f=new FileUtil(this);
 		
 		try {
-			f.savaBitmap(imageName, bitmap, 100);
+			Log.e(TAG, "============截图getImage333");
 			MyApplication.getInstance().getKvo().fire(KVOEvents.SHOT_SKIN_SCREEN,bitmap);
+			f.savaBitmap(imageName, bitmap, 100);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

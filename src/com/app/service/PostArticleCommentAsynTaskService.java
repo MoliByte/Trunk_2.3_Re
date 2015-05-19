@@ -17,6 +17,7 @@ import android.os.Looper;
 import android.util.Log;
 
 import com.app.base.entity.ArticleDiscussEntity;
+import com.base.app.utils.EasyLog;
 import com.base.service.impl.HttpAysnResultInterface;
 import com.base.service.impl.HttpAysnTaskInterface;
 import com.base.service.impl.HttpClientUtils;
@@ -125,7 +126,8 @@ public class PostArticleCommentAsynTaskService implements HttpAysnTaskInterface{
 				return ;
 			}
 			Long times = System.currentTimeMillis();
-			final String v1_post_url = context.getResources().getString(R.string.v1_postComment)+"?times="+times;
+			//final String v1_post_url = context.getResources().getString(R.string.v1_postComment)+"?times="+times;
+			String v1_post_url = context.getResources().getString(R.string.v2_api_comment)+"?client=2&times="+times;
 			JSONObject param = new JSONObject() ;
 			
 			param.put("post_id", post_id);
@@ -135,49 +137,12 @@ public class PostArticleCommentAsynTaskService implements HttpAysnTaskInterface{
 			
 			Map<String,String> mapHead = new HashMap<String,String>() ;
 			mapHead.put("Authorization", "Token " + token);
-			
+			EasyLog.e(token);
 			HttpClientUtils client = new HttpClientUtils();
 			final StringEntity bodyEntity = new StringEntity(param.toString(),"UTF-8");
-			Log.e(TAG, ">>>>"+HttpClientUtils.BASE_URL+v1_post_url);
+			Log.e(TAG, ">>>>"+HttpClientUtils.NEW_BASE_URL+v1_post_url);
 			Log.e(TAG, "param>>>>"+param.toString());
-			client.post_with_head_and_body(context, mTag,v1_post_url,mapHead, bodyEntity,PostArticleCommentAsynTaskService.this);
-			/***
-			new Thread(new Runnable() {
-				@Override
-				public void run() {
-					Looper.prepare() ;
-					try {
-						HttpClient  httpclient = new DefaultHttpClient();
-						HttpPost httppost = new HttpPost(HttpClientUtils.BASE_URL+v1_post_url);
-						httppost.addHeader("Authorization", "Token " + token);
-						httppost.addHeader("Content-Type", "application/json");
-						httppost.setEntity(bodyEntity);
-						HttpResponse response;
-						response = httpclient.execute(httppost);
-						int code = response.getStatusLine().getStatusCode();
-						Log.e(TAG, "code = "+code+"");
-						if (code == 200 || code == 201) {
-							String rev = EntityUtils.toString(response.getEntity());
-							PostArticleCommentAsynTaskService.this
-							.requestComplete(PostArticleCommentAsynTaskService.this.mTag,
-									code, response.getAllHeaders(),
-									rev.toString(), true);
-							
-							Log.e(TAG, "result = "+rev);
-						}else{
-							PostArticleCommentAsynTaskService.this
-							.requestComplete(PostArticleCommentAsynTaskService.this.mTag,
-									code, response.getAllHeaders(),
-									"error", false);
-						}
-					} catch (Exception e) {
-						Log.e(TAG, "httpPostOriginal Error of " + e.toString() );
-					}
-					Looper.loop();
-				}
-			}).start();
-			
-			**/
+			client.new_post_with_head_and_body(context, mTag,v1_post_url,mapHead, bodyEntity,PostArticleCommentAsynTaskService.this);
 			
 		} catch (Exception e) {
 			Log.e(TAG, "doPostArticleComment error:" + e.toString());

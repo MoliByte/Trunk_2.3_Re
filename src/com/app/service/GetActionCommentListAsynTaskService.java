@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.app.base.entity.ActionCommentEntity;
 import com.app.base.entity.ActionReplayEntity;
+import com.base.app.utils.EasyLog;
 import com.base.service.impl.HttpAysnResultInterface;
 import com.base.service.impl.HttpAysnTaskInterface;
 import com.base.service.impl.HttpClientUtils;
@@ -55,7 +56,8 @@ public class GetActionCommentListAsynTaskService implements HttpAysnTaskInterfac
 			params.put("page", pageIndex);
 			params.put("times", times);//刷新
 			HttpClientUtils client = new HttpClientUtils();
-			Log.e(TAG, ">>>>"+HttpClientUtils.BASE_URL+v1_post_url);
+			//Log.e(TAG, ">>>>"+HttpClientUtils.BASE_URL+v1_post_url);
+			EasyLog.e(v1_post_url+"&"+params.toString());
 			client.new_get(context, mTag,v1_post_url,params, GetActionCommentListAsynTaskService.this);
 		} catch (Exception e) {
 			Log.e(TAG, "GetCommentListAsynTaskService error:" + e.toString());

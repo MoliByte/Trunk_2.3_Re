@@ -123,7 +123,6 @@ public class LoginAsynTaskService implements HttpAysnTaskInterface{
 			ACache.get(context).put("avatar", entity.getAvatar());
 			ACache.get(context).put("integral", entity.getIntegral());
 			ACache.get(context).put("uid", obj.optInt("id")+"");//放到cache中
-			ACache.get(context).put("uid", obj.optInt("id")+"");//放到cache中
 			ACache.get(context).put("integral", obj.optInt("integral"));//放到cache中
 			ACache.get(context).put("type",""+obj.optString("type"));
 			ACache.get(context).put("avatar", obj.optString("avatar").replaceAll("\\\\", "")+"");

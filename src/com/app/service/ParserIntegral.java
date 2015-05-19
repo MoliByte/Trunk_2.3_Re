@@ -20,11 +20,11 @@ public class ParserIntegral {
 	public void parse(String json){
 		try {
 			JSONObject jsonObject=new JSONObject(json);
-			int num=jsonObject.getInt("integral_change");
-			new IntegralToast(context, num).show();
+			int num=jsonObject.optInt("integral_change");
+			if(num > 0){
+				new IntegralToast(context, num).show();
+			}
 			
-		} catch (JSONException e) {
-			e.printStackTrace();
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -571,14 +571,14 @@ public class FacialmaskResultActivity extends Activity implements
 			//Bitmap bitmap=PhotoUtils.getImageThumbnail(path, 400, 800);
 			final Bitmap bitmap=(Bitmap)args[0];
 			
-			String path=(String) args[1];
+			//String path=(String) args[1];
 			
 			
-			final Bitmap bitmap2=BitmapFactory.decodeFile(path);
+			//final Bitmap bitmap2=BitmapFactory.decodeFile(path);
 			
-			if(bitmap!=null){
+			/*if(bitmap!=null){
 				bitmap2.recycle();
-			}
+			}*/
 			
 			//ivProductImage.setImageBitmap(bitmap);
 			// 使用友盟分享
@@ -612,16 +612,6 @@ public class FacialmaskResultActivity extends Activity implements
 							finish();
 						}
 					});
-				}else if(bitmap2!=null){
-					UMShareUtil.getInstance().WXCShareImage(this, " ", bitmap2, new ShareAction() {
-						
-						@Override
-						public void onSuccess() {
-							bitmap2.recycle();
-							 postShareResult();
-							finish();
-						}
-					});
 				}
 				
 				break;
@@ -642,18 +632,7 @@ public class FacialmaskResultActivity extends Activity implements
 							finish();
 						}
 					});
-				}else if(bitmap2!=null){
-						UMShareUtil.getInstance().sinaShareImage(this, " ", bitmap2, new ShareAction() {
-						
-						@Override
-						public void onSuccess() {
-							bitmap2.recycle();
-							 postShareResult();
-							finish();
-						}
-					});
 				}
-				break;
 			}
 		}catch(Exception e){
 			e.printStackTrace();

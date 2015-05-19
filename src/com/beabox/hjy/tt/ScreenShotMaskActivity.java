@@ -234,13 +234,14 @@ public class ScreenShotMaskActivity extends Activity implements  Observer{
 	@Override
 	protected void onPause() {
 		super.onPause();
+		getImage();
 	}
 	
 	
 	@Override
 	protected void onStop() {
 		super.onStop();
-		getImage();
+		
 	}
 	@Override
 	protected void onDestroy() {
@@ -267,9 +268,9 @@ public class ScreenShotMaskActivity extends Activity implements  Observer{
 		FileUtil f=new FileUtil(this);
 		
 		try {
-			
+			MyApplication.getInstance().getKvo().fire(KVOEvents.SHOT_SCREEN,bitmap,"");
 			String path=f.savaBitmap(imageName, bitmap, 100);
-			MyApplication.getInstance().getKvo().fire(KVOEvents.SHOT_SCREEN,bitmap,path);
+			
 			
 			/*
 			SharedPreferences facialMaskShare=getSharedPreferences("FACIAL_MASK_SHARE_IMAGE_NAME",Activity.MODE_PRIVATE);

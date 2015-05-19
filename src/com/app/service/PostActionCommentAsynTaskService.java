@@ -78,41 +78,6 @@ public class PostActionCommentAsynTaskService implements HttpAysnTaskInterface{
 			Log.e(TAG, "doPostActionComment error:" + e.toString());
 		}
 	}
-	/**
-	 * 发布活动评论 abandoned
-	 * @param post_id
-	 * @param to_uid
-	 * @param comment
-	 * @param token
-	 */
-	public void doPostComment(long post_id ,long parent_id,long to_uid ,String comment,String token) {
-		try {
-			
-			if(!SystemTool.checkNet(context)){
-				AppToast.toastMsgCenter(context, context.getResources().getString(R.string.no_network)).show();
-				return ;
-			}
-			Long times = System.currentTimeMillis();
-			String v1_post_url = context.getResources().getString(R.string.v1_postComment)+"?times="+times+"&client=2";
-			JSONObject param = new JSONObject() ;
-			
-			param.put("post_id", post_id);
-			param.put("parent_id", parent_id);
-			param.put("content", comment);
-			param.put("to_uid", to_uid);
-			
-			Map<String,String> mapHead = new HashMap<String,String>() ;
-			mapHead.put("Authorization", "Token " + token);
-			
-			HttpClientUtils client = new HttpClientUtils();
-			StringEntity bodyEntity = new StringEntity(param.toString(),"UTF-8");
-			EasyLog.e(">>>>"+HttpClientUtils.BASE_URL+v1_post_url);
-			EasyLog.e("param>>>>"+param.toString());
-			client.post_with_head_and_body(context, mTag,v1_post_url,mapHead, bodyEntity,PostActionCommentAsynTaskService.this);
-		} catch (Exception e) {
-			Log.e(TAG, "doPostArticleComment error:" + e.toString());
-		}
-	}
 
 	@Override
 	public void requestComplete(Object tag,int statusCode,Object header , Object result, boolean complete) {
