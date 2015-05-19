@@ -2,7 +2,7 @@
 <resources>
 	<!-- 下载更新 -->
 	
-	<string name="download_url">http://napi.skinrun.cn/v1/Version?type=7</string>
+	<string name="download_url">http://napi.skinrun.cn/v1/Version?type=4</string>
 	
     <!-- 用户登录 -->
     <string name="v1_session">/v1/session</string>
