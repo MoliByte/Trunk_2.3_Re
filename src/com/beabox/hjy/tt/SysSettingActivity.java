@@ -73,6 +73,7 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	private NotificationCompat.Builder ntfBuilder;
 	private static final int COMPLETE_DOWNLOAD_APK = 0x2;
 	private static final int DOWNLOAD_NOTIFICATION_ID = 0x3;
+	private static final int INSTALL_APK = 0x4;
 	
 	private DownloadPresenter downloadPresenter ;
 	static NiftyDialogBuilder dialogUploadImage ;
@@ -85,6 +86,7 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	static boolean isForced = false ;
 	static boolean isInstalling = false ;
 	final static int Down_Pro = 100 ;
+	static int progress_num = -1 ;
 	Handler handler = new Handler(){
 
 		@Override
@@ -93,23 +95,29 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 			case Down_Pro:
 				//content.setText((String)msg.obj+"");
 				//NumberProgressBar number_progress_bar = (NumberProgressBar)msg.obj ;
+				long downloaded = msg.getData().getLong("downloaded");
+				long total = msg.getData().getLong("total");
+				
 				if(null != number_progress_bar){
 					number_progress_bar.incrementProgressBy(1);
 			 	    number_progress_bar.setProgress(msg.arg1);
 			 	    number_progress_bar.setMax(msg.arg2);
 				}
-				if(msg.arg1 == 100 && isForced && !isInstalling){
+				EasyLog.e(downloaded+" / "+total);
+				if(msg.arg1 == 100 && isForced && !isInstalling && (downloaded == total)){
 					isInstalling = true ;
 					if(null != dialogUploadImage){
 						dialogUploadImage.dismiss();
 						//dialogUploadImage = null ;
 					}
 					installApkDialog(Uri.parse("file://" + APK_PATH));
-				}else if(msg.arg1 == 100){
+				}
+				
+				else if((downloaded == total)){
 					installApk(Uri.parse("file://" + APK_PATH));
 				}
 				
-		 	   	EasyLog.e(msg.arg1+","+msg.arg2);
+		 	   	//EasyLog.e(msg.arg1+","+msg.arg2);
 		 	   	showDownloadNotificationUI(msg.arg1);
 			break;
 			case COMPLETE_DOWNLOAD_APK:
@@ -131,6 +139,10 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 					}
 					notificationManager.notify(DOWNLOAD_NOTIFICATION_ID,
 							ntfBuilder.build());
+				break;
+			case INSTALL_APK:
+				//installApk(Uri.parse("file://" + APK_PATH));
+				//installApkDialogByCancel(Uri.parse("file://" + APK_PATH));
 				break;
 
 			default:
@@ -213,6 +225,7 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
             .isAutoInstall(true) //设置为false需在下载完手动点击安装;默认值为true，下载后自动安装。
             .build();
 			updateHelper.check(); */
+			isDownLoading = false ;
 			 dialogUploadImage = NiftyDialogBuilder.getInstance(this, R.layout.dialog_login_layout);
 				final View text_ = LayoutInflater.from(this).inflate(R.layout.dialog_login_view, null);
 				TextView t_ = (TextView) text_.findViewById(R.id.loading_text);
@@ -425,20 +438,21 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	@Override
 	public void download(UpdateInfo modelInfo) {
 		try {
-			if(null != dialogUploadImage){
+			if(dialogUploadImage != null){
 				dialogUploadImage.dismiss();
 			}
 			if (modelInfo != null) {
 				if (Integer.parseInt(modelInfo.getVersionCode()) > getPackageInfo().versionCode) {
 					showUpdateUI(modelInfo);
 				} else {
+					//主页不提示
 					AppToast.toastMsgCenter(this, "当前已是最新版").show();
 				}
 			}else{
 				AppToast.toastMsgCenter(this, "当前已是最新版").show();
 			}
 		} catch (Exception e) {
-			
+			AppToast.toastMsgCenter(this, "当前已是最新版").show();
 		}
 		
 	}
@@ -468,11 +482,20 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	 * @param updateInfo
 	 */
 	private void showUpdateUI(final UpdateInfo updateInfo) {
-		dialog_update(updateInfo/*updateInfo.getChangeLog(),updateInfo.getIs_force()*/);
+		String downloadPathString = AppBaseUtil.APK_DOWNLOAD + File.separator + "trunk_"+updateInfo.getVersionName()+".apk"; 
+		APK_PATH = downloadPathString ;
+		
+		if(new File(downloadPathString).exists()){
+			installApkDialogByCancel(Uri.parse("file://" + APK_PATH));
+		}else{
+			dialog_update(updateInfo);
+		}
 	}
 	
 	public  void dialog_update(final UpdateInfo updateInfo) {
-		
+		if(null != dialogUploadImage){
+			dialogUploadImage.dismiss();
+		}
 		dialogUploadImage = NiftyDialogBuilder.getInstance(this);
 		final View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_with_two_button, null);
 		final TextView t = (TextView) view.findViewById(R.id.text);
@@ -578,15 +601,12 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 				.setButton1Click(new OnClickListener() {
 					@Override
 					public void onClick(View arg0) {
-						if(null != dialogUploadImage){
-							dialogUploadImage.dismiss();
-						}
-						isDownLoading = false ;
 						if(!isForced){
-							isForced = false ;
+							if(null != dialogUploadImage){
+								dialogUploadImage.dismiss();
+							}
 							Ion.getDefault(SysSettingActivity.this).cancelAll(downloadGroup);
 						}else{
-							isForced = false ;
 							Ion.getDefault(SysSettingActivity.this).cancelAll(downloadGroup);
 							MyApplication.getInstance().exit();
 						}
@@ -597,6 +617,9 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	}
 	
 	public void installApkDialog(final Uri data){
+		if(null != dialogUploadImage){
+			dialogUploadImage.dismiss();
+		}
 		dialogUploadImage = NiftyDialogBuilder.getInstance(this);
 		final View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_with_two_button, null);
 		final TextView t = (TextView) view.findViewById(R.id.text);
@@ -625,14 +648,70 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 		}).show();
 	}
 	
+	private void installApkDialogByCancel(final Uri data){
+		if(null != dialogUploadImage){
+			dialogUploadImage.dismiss();
+		}
+		dialogUploadImage = NiftyDialogBuilder.getInstance(this);
+		final View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_with_two_button, null);
+		final TextView t = (TextView) view.findViewById(R.id.text);
+		number_progress_bar = (NumberProgressBar) view.findViewById(R.id.number_progress_bar);
+		//t.setVisibility(View.GONE);
+		t.setText("下载完成请安装!");
+		number_progress_bar.setProgress(100);
+		number_progress_bar.setVisibility(View.GONE);
+		number_progress_bar.setOnProgressBarListener(this);
+		dialogUploadImage.setCanceledOnTouchOutside(false);
+		dialogUploadImage.setCancelable(false);
+		dialogUploadImage.withTitle(null).withMessage(null)
+		.withMessageColor("#FFFFFFFF")
+		.isCancelableOnTouchOutside(false).withDuration(100)
+		.withEffect(Effectstype.Fadein).withButton1Text("安装")
+		.withEffect(Effectstype.Fadein).withButton2Text("取消")
+		
+		.setCustomView(view, this)
+		
+		.setButton1Click(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				if(dialogUploadImage!=null){
+					dialogUploadImage.dismiss();
+				}
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setDataAndType(data, "application/vnd.android.package-archive");
+				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				SysSettingActivity.this.startActivity(i);
+				
+			}
+		}).setButton2Click(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				if(dialogUploadImage!=null){
+					dialogUploadImage.dismiss();
+				}
+			}
+		}).show();
+	}
+	
 	
 	/**确认开始下载*/
 	public void downloadApk(UpdateInfo modelInfo,final NumberProgressBar number_progress_bar ){
 		String downloadPathString = AppBaseUtil.APK_DOWNLOAD + File.separator + "trunk_"+modelInfo.getVersionName()+".apk"; 
 		APK_PATH = downloadPathString ;
-		if(new File(downloadPathString).exists()){
-			new File(downloadPathString).delete();
+		try {
+			if(!new File(downloadPathString).exists()){
+				File[] files = new File(AppBaseUtil.APK_DOWNLOAD + File.separator).listFiles() ;
+				for (int i = 0; i < files.length; i++) {
+					if(!downloadPathString.equals(files[i].getAbsolutePath())){
+						files[i].delete();
+					}
+				}
+				//new File(downloadPathString).delete();
+			}
+		} catch (Exception e) {
+			
 		}
+		
 		B b = Ion.with(getApplicationContext())
         .load(modelInfo.getApkUrl());//
 		b.group(downloadGroup) ;
@@ -650,7 +729,11 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	    		msgMessage.obj = number_progress_bar ;
 	    		msgMessage.arg1 =  Integer.valueOf(result.replaceAll("%", ""));
 	    		msgMessage.arg2 = 100 ;//(int)total ;
-	    		handler.sendMessage(msgMessage);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putLong("downloaded", downloaded);
+	    		bundle.putLong("total", total);
+	    		msgMessage.setData(bundle);
+	    		handler.sendMessageDelayed(msgMessage,1000);
 	           // System.out.println("result = " + result);
 	           // System.out.println("" + downloaded + " / " + total);
 	        }
@@ -671,8 +754,13 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	@Override
 	public void onProgressChange(int current, int max) {
 		if(current == max){
-			EasyLog.e(current+"=========="+max);
-			handler.obtainMessage(COMPLETE_DOWNLOAD_APK).sendToTarget();
+			if(null != dialogUploadImage){
+				dialogUploadImage.dismiss();
+			}
+			//EasyLog.e(current+"=========="+max);
+			//installApk(Uri.parse("file://" + APK_PATH));
+			
+			
 			if(!isForced){
 				//number_progress_bar.setVisibility(View.GONE);
 				isDownLoading = false ;
@@ -685,6 +773,11 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 				}*/
 				//installApkDialog(Uri.parse("file://" + APK_PATH));
 			}
+			//Message msgMessage = new Message() ;
+			//msgMessage.what = INSTALL_APK ;
+			handler.obtainMessage(INSTALL_APK).sendToTarget();
+			//handler.sendMessage(msgMessage);
+			
 			
 		}
 		
@@ -692,9 +785,10 @@ public class SysSettingActivity extends BaseActivity implements IDownloadView ,O
 	}
 	
 	private void installApk(Uri data) {
+		
 		if (!isForced) {
 			Intent i = new Intent(Intent.ACTION_VIEW);
-			i.setDataAndType(data, "application/vnd.android.package-archive");
+			i.setDataAndType(Uri.parse("file://" + APK_PATH), "application/vnd.android.package-archive");
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			this.startActivity(i);
 		} else {

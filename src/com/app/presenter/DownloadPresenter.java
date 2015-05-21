@@ -33,9 +33,17 @@ public class DownloadPresenter implements HttpAysnResultInterface{
         .setCallback(new FutureCallback<JsonObject>() {
            @Override
             public void onCompleted(Exception e, JsonObject result) {
-        	   EasyLog.e(result.toString());
-        	    UpdateInfo entity = new Gson().fromJson(result.toString(), UpdateInfo.class);
-        	    downloadView.download(entity);
+        	   try {
+        		   if(e == null && null !=result ){
+	          	    	UpdateInfo entity = new Gson().fromJson(result.toString(), UpdateInfo.class);
+	          	    	downloadView.download(entity);
+        		   }else{
+        			   downloadView.download(null);
+        		   }
+				} catch (Exception error) {
+					
+				}
+        	   
             }
         });
 		

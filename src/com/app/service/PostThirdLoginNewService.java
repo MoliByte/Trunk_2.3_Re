@@ -185,6 +185,7 @@ public class PostThirdLoginNewService implements HttpAysnTaskInterface {
 			ACache.get(context).put("uid", obj.optInt("id") + "");// 放到cache中
 			ACache.get(context).put("uid", obj.optInt("id") + "");// 放到cache中
 			ACache.get(context).put("integral", obj.optInt("integral"));// 放到cache中
+			ACache.get(context).put("integral_real", obj.optInt("integral_real"));//放到cache中
 			ACache.get(context).put("type", "" + obj.optString("type"));
 			ACache.get(context).put("avatar",
 					obj.optString("avatar").replaceAll("\\\\", "") + "");

@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.http.util.EncodingUtils;
 import org.json.JSONArray;
@@ -17,18 +16,19 @@ import org.kymjs.aframe.database.KJDB;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
-import android.widget.Toast;
+
 import com.app.base.entity.HandCommentEntity;
 import com.app.base.entity.HumidityEntity;
 import com.app.base.entity.IndustryStandardEntity;
@@ -51,12 +51,12 @@ import com.avoscloud.chat.util.Logger;
 import com.avoscloud.chat.util.PhotoUtils;
 import com.base.app.utils.DBService;
 import com.base.app.utils.DensityUtil;
+import com.base.app.utils.EasyLog;
 import com.base.app.utils.KVOEvents;
 import com.base.app.utils.PushNumUtil;
 import com.base.facedemo.FaceConversionUtil;
 import com.base.service.action.constant.HttpTagConstantUtils;
 import com.base.service.impl.HttpAysnResultInterface;
-import com.beabox.hjy.tt.MyMasterActivity;
 import com.beabox.hjy.tt.R;
 import com.beabox.hjy.tt.SkinRunSplashActivity;
 import com.beabox.hjy.tt.main.skintest.component.KVO;
@@ -304,11 +304,15 @@ public class MyApplication extends Application implements HttpAysnResultInterfac
 			
 			initLeanCloud();
 			registerUser();//如果已经登录过，那么去注册
+			EasyLog.e(getChannel());
 		} catch (Exception e) {
 
 		}
 	}
 	
+	/**
+	 * 初始化
+	 ***********/
 	public void initLeanCloud() {
 		AVOSCloud.initialize(this, appId, appKey);
 		PushService.setDefaultPushCallback(ctx, SkinRunSplashActivity.class);
@@ -321,6 +325,22 @@ public class MyApplication extends Application implements HttpAysnResultInterfac
 		}
 		//AVUser.logOut();
 		
+	}
+	
+	public String getChannel(){
+		String UMENG_CHANNEL = "tencent" ;
+		try {
+			ApplicationInfo appInfo = this.getPackageManager()
+	                .getApplicationInfo(getPackageName(),
+	        PackageManager.GET_META_DATA);
+			
+			UMENG_CHANNEL =appInfo.metaData.getString("UMENG_CHANNEL");
+		} catch (Exception e) {
+			
+		}
+		
+		
+		return UMENG_CHANNEL ;
 	}
 	
 	void registerUser() {

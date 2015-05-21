@@ -82,7 +82,6 @@ import com.app.service.PostPraiseAsynTaskService;
 import com.app.service.PostUserShareService;
 import com.app.service.PutUserAddressTaskService;
 import com.avos.avoscloud.LogUtil.log;
-import com.avoscloud.chat.base.ChatMsgAdapter;
 import com.avoscloud.chat.base.ExpandGridView;
 import com.avoscloud.chat.base.ExpressionAdapter;
 import com.avoscloud.chat.base.ExpressionGridGuideAdapter;
@@ -813,6 +812,9 @@ public class ActionDiscussActivity extends BaseActivity implements
 					ll_image_display.setVisibility(View.GONE);
 					resetReplay();
 					getData();
+				}else if(statusCode == 413){
+					AppToast.toastMsgCenter(getApplicationContext(),
+							getString(R.string.ERROR_413)).show();
 				} else {
 					AppToast.toastMsgCenter(getApplicationContext(),
 							getString(R.string.ERROR_404)).show();
@@ -1218,6 +1220,10 @@ public class ActionDiscussActivity extends BaseActivity implements
 					}
 					
 					if(!"".equals(path)){
+//						final String objectId = Utils.uuid();
+//						final String newPath = PathUtils.getChatFilePath(objectId);
+//						
+//						PhotoUtils.simpleCompressImage(path, newPath);
 						
 						// avatarImg.setImageBitmap(getSDCardImg(path));// 显示本地图片
 						Log.e("photo---------path:", path);
@@ -1594,11 +1600,10 @@ public class ActionDiscussActivity extends BaseActivity implements
 			comment.setText(spannableString, BufferType.SPANNABLE);
 			
 			ImageView img = (ImageView) convertView.findViewById(R.id.img);
-			
+			setImageOnClickListener("", entity.getImg(), img);
 			if("".equals(entity.getImg()) || null == entity.getImg()){
 				img.setVisibility(View.GONE);
 			}else{
-				
 				img.setVisibility(View.VISIBLE);
 				UserService.imageLoader.displayImage(
 						entity.getImg()+"", img,
@@ -1740,6 +1745,20 @@ public class ActionDiscussActivity extends BaseActivity implements
 			}
 
 			return convertView;
+		}
+		
+		private void setImageOnClickListener(final String path, final String url,
+				ImageView imageView) {
+			imageView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent intent = new Intent(context, ImageBrowerActivity.class);
+					intent.putExtra("path", path);
+					intent.putExtra("url", url);
+					startActivity(intent);
+					overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+				}
+			});
 		}
 		
 		public boolean checkAuthor(long from_uid){

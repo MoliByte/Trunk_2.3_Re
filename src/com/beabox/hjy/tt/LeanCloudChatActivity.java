@@ -178,7 +178,7 @@ public class LeanCloudChatActivity extends Activity implements OnClickListener,
 	@SuppressLint("SimpleDateFormat")
 	private static SimpleDateFormat format = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm");
-	
+	private Handler sendHandler = new Handler();
 	private final static int SEND_MSG_SUCCESS = 200 ;
 	private final static int SEND_MSG_FAILED = 404 ;
 
@@ -357,9 +357,29 @@ public class LeanCloudChatActivity extends Activity implements OnClickListener,
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 				if(scrollState == OnScrollListener.SCROLL_STATE_IDLE
 						&& view.getLastVisiblePosition() == view.getCount() - 1){
-					Message msg = new Message() ;
-    				msg.what = 100 ;
-    				dataHandler.sendMessage(msg);
+					try {
+						runOnUiThread(new Runnable() {
+							
+							@Override
+							public void run() {
+								
+	//							Message msg = new Message() ;
+	//		    				msg.what = 100 ;
+	//		    				dataHandler.sendMessage(msg);
+			    				try {
+			    					new_msg_layout.setVisibility(View.INVISIBLE);
+									mAdapter.refresh();
+								} catch (Exception e) {
+									mAdapter.refresh();
+								}
+			    				
+								
+							}
+						});
+					} catch (Exception e) {
+						mAdapter.refresh();
+					}
+					
 				}
 				
 			}
@@ -1285,27 +1305,32 @@ public class LeanCloudChatActivity extends Activity implements OnClickListener,
 	private Handler dataHandler = new Handler() {
 
 		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
-			if(msg.what == 100){
-				new_msg_layout.setVisibility(View.INVISIBLE);
-				mAdapter.refresh();
-			}else{
-				ChatMsgEntity entity = (ChatMsgEntity) msg.obj ;
-				mDataArrays.add(entity);
-				if(mDataArrays.size() <= 6 || !entity.isComMeg()){
-					mAdapter.refresh();
-					//new_msg_layout.setVisibility(View.INVISIBLE);
-				}
+			try {
+				super.handleMessage(msg);
 				
-				//接受到新的消息后显示新消息
-				if(entity.isComMeg() && mDataArrays.size() > 6 ){
-					new_msg_layout.setVisibility(View.VISIBLE);
+				if(msg.what == 100){
+					
+				}else{
+					ChatMsgEntity entity = (ChatMsgEntity) msg.obj ;
+					mDataArrays.add(entity);
+					if(mDataArrays.size() <= 6 || !entity.isComMeg()){
+						mAdapter.refresh();
+						//new_msg_layout.setVisibility(View.INVISIBLE);
+					}
+					
+					//接受到新的消息后显示新消息
+					if(entity.isComMeg() && mDataArrays.size() > 6 ){
+						new_msg_layout.setVisibility(View.VISIBLE);
+					}
+					//发送消息不显示新的消息
+					else if(!entity.isComMeg() && mDataArrays.size() > 6 ){
+						new_msg_layout.setVisibility(View.INVISIBLE);
+					}
 				}
-				//发送消息不显示新的消息
-				else if(!entity.isComMeg() && mDataArrays.size() > 6 ){
-					new_msg_layout.setVisibility(View.INVISIBLE);
-				}
+			} catch (Exception e) {
+				mAdapter.refresh();
 			}
+			
 			
 			
 			//由于消息刷新太快，不直接显示到底部

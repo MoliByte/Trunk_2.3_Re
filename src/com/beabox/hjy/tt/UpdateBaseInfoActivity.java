@@ -565,7 +565,11 @@ public class UpdateBaseInfoActivity extends BaseActivity implements
 					for(String code : mZipcodeDatasMap.keySet()){
 						if(mZipcodeDatasMap.get(code).equals(mCurrentDistrictName)
 								&& code.substring(0, 2).equals(provinceCode_.substring(0, 2))){
-							provinceCode_ = code ;
+							try {
+								provinceCode_ = cityCode_.substring(0, 4) + code.substring(4, 6) ;
+							} catch (Exception e) {
+								provinceCode_ = code ;
+							}
 						}
 					}
 					
@@ -581,6 +585,11 @@ public class UpdateBaseInfoActivity extends BaseActivity implements
 						}
 					}*/
 					Log.e(TAG, "final provinceCode_ = "+provinceCode_);
+					if(birthday.getText()==null||"".equals(birthday.getText())||"null".equals(birthday.getText())){
+						AppToast.toastMsg(UpdateBaseInfoActivity.this, "小主，请您选择出生日期").show();
+						return;
+					}
+					
 					new com.app.service.UpdateUserInfoService(
 							getApplicationContext(),
 							HttpTagConstantUtils.UPDATE_USER_INFO,

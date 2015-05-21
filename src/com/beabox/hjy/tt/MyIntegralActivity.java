@@ -17,6 +17,7 @@ import com.app.base.init.MyApplication;
 import com.app.service.GetUserInfoService;
 import com.avoscloud.chat.service.UserService;
 import com.avoscloud.chat.util.PhotoUtils;
+import com.base.app.utils.EasyLog;
 import com.base.app.utils.StringUtil;
 import com.base.service.action.constant.HttpTagConstantUtils;
 import com.umeng.message.PushAgent;
@@ -81,20 +82,24 @@ public class MyIntegralActivity extends BaseActivity {
         	((TextView)findViewById(R.id.username)).setText(""+aCache.getAsString("nickname"));
         	
         	level = (TextView)findViewById(R.id.level);
-    		String integral = ACache.get(this).getAsObject("integral")+"";
-    		level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null||"null".equals(integral)|| "".equals(integral)?"0":integral)));
+    		//String integral = ACache.get(this).getAsObject("integral")+"";
+    		//level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null||"null".equals(integral)|| "".equals(integral)?"0":integral)));
         	
-        	gold_coins.setText(""+integral);
+//        	Integer integral = ACache.get(this).getAsInteger("integral") ;
+//			level.setText(""+StringUtil.getLevel(integral));
+//        	
+//        	gold_coins.setText(""+ACache.get(this).getAsInteger("integral_real"));
+//        	
+//        	//avatar_img.setBackgroundDrawable(null);
+//    		String avatar_str = aCache.getAsString("avatar");
+//    		String avatar = avatar_str == null ? "" : avatar_str.replaceAll("\\\\",
+//    				"");
+//    		Log.e("MineFrag-------->", avatar);
+//    		
+//    		UserService.imageLoader.displayImage(""+ avatar + "?time="
+//    				+ System.currentTimeMillis(), (ImageView)findViewById(R.id.avatarImg),
+//					PhotoUtils.myPicImageOptions);
         	
-        	//avatar_img.setBackgroundDrawable(null);
-    		String avatar_str = aCache.getAsString("avatar");
-    		String avatar = avatar_str == null ? "" : avatar_str.replaceAll("\\\\",
-    				"");
-    		Log.e("MineFrag-------->", avatar);
-    		
-    		UserService.imageLoader.displayImage(""+ avatar + "?time="
-    				+ System.currentTimeMillis(), (ImageView)findViewById(R.id.avatarImg),
-					PhotoUtils.myPicImageOptions);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -172,35 +177,53 @@ public class MyIntegralActivity extends BaseActivity {
     
     public void updateUserInfo(UserEntity entity) {
 		try {
-			aCache.put("Token", entity.getToken());// 保存Token
-			ACache.get(this).put("nickname", entity.getNiakname());
-			ACache.get(this).put("mobile", entity.getMobile());
-			ACache.get(this).put("username", entity.getMobile());
-			ACache.get(this).put("skin_type", entity.getSkinType());
-			ACache.get(this).put("region_name", entity.getRegionNames());
-			ACache.get(this).put("region", entity.getRegion());
-			ACache.get(this).put("realname", entity.getRealname());
-			ACache.get(this).put("birthday", entity.getBirthday());
-			ACache.get(this).put("gender", entity.getGender());
-			ACache.get(this).put("avatar", entity.getAvatar());
-			ACache.get(this).put("integral", entity.getIntegral());
+//			aCache.put("Token", entity.getToken());// 保存Token
+//			ACache.get(this).put("nickname", entity.getNiakname());
+//			ACache.get(this).put("mobile", entity.getMobile());
+//			ACache.get(this).put("username", entity.getMobile());
+//			ACache.get(this).put("skin_type", entity.getSkinType());
+//			ACache.get(this).put("region_name", entity.getRegionNames());
+//			ACache.get(this).put("region", entity.getRegion());
+//			ACache.get(this).put("realname", entity.getRealname());
+//			ACache.get(this).put("birthday", entity.getBirthday());
+//			ACache.get(this).put("gender", entity.getGender());
+//			ACache.get(this).put("avatar", entity.getAvatar());
+//			ACache.get(this).put("integral", entity.getIntegral());
 			
 			
-			String integral = entity.getIntegral()+"";
-    		level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null||"null".equals(integral)|| "".equals(integral)?"0":integral)));
+			//String integral = entity.getIntegral()+"";
+    		//level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null||"null".equals(integral)|| "".equals(integral)?"0":integral)));
         	
-        	gold_coins.setText(""+entity.getIntegral());
+        	//gold_coins.setText(""+entity.getIntegral());
         	
-    		String avatar_str = entity.getAvatar()+"";
+//    		String avatar_str = entity.getAvatar()+"";
+//    		String avatar = avatar_str == null ? "" : avatar_str.replaceAll("\\\\",
+//    				"");
+//    		Log.e("MineFrag-------->", avatar);
+//    		UserService.imageLoader.displayImage(""+ avatar + "?time="
+//    				+ System.currentTimeMillis(), (ImageView)findViewById(R.id.avatarImg),
+//					PhotoUtils.myPicImageOptions);
+			
+			
+			String integral = ACache.get(this).getAsObject("integral")+"" ;
+			level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null|| "".equals(integral)?"0":integral)));
+        	
+			String integral_real = ACache.get(this).getAsObject("integral_real")+"" ;
+        	gold_coins.setText(""+integral_real);
+        	
+        	//avatar_img.setBackgroundDrawable(null);
+    		String avatar_str = aCache.getAsString("avatar");
     		String avatar = avatar_str == null ? "" : avatar_str.replaceAll("\\\\",
     				"");
     		Log.e("MineFrag-------->", avatar);
+    		
     		UserService.imageLoader.displayImage(""+ avatar + "?time="
     				+ System.currentTimeMillis(), (ImageView)findViewById(R.id.avatarImg),
 					PhotoUtils.myPicImageOptions);
+			
     		
 		} catch (Exception e) {
-			
+			EasyLog.e(e.toString());
 		}
 		
 	}

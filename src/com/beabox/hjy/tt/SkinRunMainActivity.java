@@ -18,7 +18,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +39,6 @@ import com.app.service.GetMyMessageCountService;
 import com.app.service.JudgeUserInfoService;
 import com.app.service.LoginAsynTaskService;
 import com.avos.avoscloud.LogUtil.log;
-import com.base.app.utils.DBService;
 import com.base.app.utils.EasyLog;
 import com.base.app.utils.GetUserInfoUtil;
 import com.base.app.utils.HomeTag;
@@ -51,7 +49,6 @@ import com.base.dialog.lib.NiftyDialogBuilder;
 import com.base.service.action.constant.HttpTagConstantUtils;
 import com.base.service.impl.HttpAysnResultInterface;
 import com.base.supertoasts.util.AppToast;
-import com.base.update.UpdateHelper;
 import com.beabox.hjy.tt.main.skintest.component.KVO.Observer;
 import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.daimajia.numberprogressbar.OnProgressBarListener;
@@ -92,6 +89,7 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	private NotificationCompat.Builder ntfBuilder;
 	private static final int COMPLETE_DOWNLOAD_APK = 0x2;
 	private static final int DOWNLOAD_NOTIFICATION_ID = 0x3;
+	private static final int INSTALL_APK = 0x4;
 	
 	private DownloadPresenter downloadPresenter ;
 	static NiftyDialogBuilder dialogUploadImage ;
@@ -115,23 +113,29 @@ public class SkinRunMainActivity extends FragmentActivity implements
 			case Down_Pro:
 				//content.setText((String)msg.obj+"");
 				//NumberProgressBar number_progress_bar = (NumberProgressBar)msg.obj ;
+				long downloaded = msg.getData().getLong("downloaded");
+				long total = msg.getData().getLong("total");
+				
 				if(null != number_progress_bar){
 					number_progress_bar.incrementProgressBy(1);
 			 	    number_progress_bar.setProgress(msg.arg1);
 			 	    number_progress_bar.setMax(msg.arg2);
 				}
-				if(msg.arg1 == 100 && isForced && !isInstalling){
+				EasyLog.e(downloaded+" / "+total);
+				if(msg.arg1 == 100 && isForced && !isInstalling && (downloaded == total)){
 					isInstalling = true ;
 					if(null != dialogUploadImage){
 						dialogUploadImage.dismiss();
 						//dialogUploadImage = null ;
 					}
 					installApkDialog(Uri.parse("file://" + APK_PATH));
-				}else if(msg.arg1 == 100){
+				}
+				
+				else if((downloaded == total)){
 					installApk(Uri.parse("file://" + APK_PATH));
 				}
 				
-		 	   	EasyLog.e(msg.arg1+","+msg.arg2);
+		 	   	//EasyLog.e(msg.arg1+","+msg.arg2);
 		 	   	showDownloadNotificationUI(msg.arg1);
 			break;
 			case COMPLETE_DOWNLOAD_APK:
@@ -153,6 +157,10 @@ public class SkinRunMainActivity extends FragmentActivity implements
 					}
 					notificationManager.notify(DOWNLOAD_NOTIFICATION_ID,
 							ntfBuilder.build());
+				break;
+			case INSTALL_APK:
+				//installApk(Uri.parse("file://" + APK_PATH));
+				//installApkDialogByCancel(Uri.parse("file://" + APK_PATH));
 				break;
 
 			default:
@@ -678,7 +686,14 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	 * @param updateInfo
 	 */
 	private void showUpdateUI(final UpdateInfo updateInfo) {
-		dialog_update(updateInfo/*updateInfo.getChangeLog(),updateInfo.getIs_force()*/);
+		String downloadPathString = AppBaseUtil.APK_DOWNLOAD + File.separator + "trunk_"+updateInfo.getVersionName()+".apk"; 
+		APK_PATH = downloadPathString ;
+		
+		if(new File(downloadPathString).exists()){
+			installApkDialogByCancel(Uri.parse("file://" + APK_PATH));
+		}else{
+			dialog_update(updateInfo);
+		}
 	}
 	
 	public  void dialog_update(final UpdateInfo updateInfo) {
@@ -765,6 +780,9 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	}
 	
 	public void downloadCanceled(final UpdateInfo updateInfo){
+		if(null != dialogUploadImage){
+			dialogUploadImage.dismiss();
+		}
 		dialogUploadImage = NiftyDialogBuilder.getInstance(this);
 		final View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_with_two_button, null);
 		final TextView t = (TextView) view.findViewById(R.id.text);
@@ -829,14 +847,66 @@ public class SkinRunMainActivity extends FragmentActivity implements
 		}).show();
 	}
 	
+	public void installApkDialogByCancel(final Uri data){
+		dialogUploadImage = NiftyDialogBuilder.getInstance(this);
+		final View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_with_two_button, null);
+		final TextView t = (TextView) view.findViewById(R.id.text);
+		number_progress_bar = (NumberProgressBar) view.findViewById(R.id.number_progress_bar);
+		//t.setVisibility(View.GONE);
+		t.setText("下载完成请安装!");
+		number_progress_bar.setProgress(100);
+		number_progress_bar.setVisibility(View.GONE);
+		number_progress_bar.setOnProgressBarListener(this);
+		dialogUploadImage.setCanceledOnTouchOutside(false);
+		dialogUploadImage.setCancelable(false);
+		dialogUploadImage.withTitle(null).withMessage(null)
+		.withMessageColor("#FFFFFFFF")
+		.isCancelableOnTouchOutside(false).withDuration(100)
+		.withEffect(Effectstype.Fadein).withButton1Text("安装")
+		.withEffect(Effectstype.Fadein).withButton2Text("取消")
+		
+		.setCustomView(view, this)
+		
+		.setButton1Click(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				if(dialogUploadImage!=null){
+					dialogUploadImage.dismiss();
+				}
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setDataAndType(data, "application/vnd.android.package-archive");
+				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				SkinRunMainActivity.this.startActivity(i);
+			}
+		}).setButton2Click(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				if(dialogUploadImage!=null){
+					dialogUploadImage.dismiss();
+				}
+			}
+		}).show();
+	}
+	
 	
 	/**确认开始下载*/
 	public void downloadApk(UpdateInfo modelInfo,final NumberProgressBar number_progress_bar ){
 		String downloadPathString = AppBaseUtil.APK_DOWNLOAD + File.separator + "trunk_"+modelInfo.getVersionName()+".apk"; 
 		APK_PATH = downloadPathString ;
-		if(new File(downloadPathString).exists()){
-			new File(downloadPathString).delete();
+		try {
+			if(!new File(downloadPathString).exists()){
+				File[] files = new File(AppBaseUtil.APK_DOWNLOAD + File.separator).listFiles() ;
+				for (int i = 0; i < files.length; i++) {
+					if(!downloadPathString.equals(files[i].getAbsolutePath())){
+						files[i].delete();
+					}
+				}
+				//new File(downloadPathString).delete();
+			}
+		} catch (Exception e) {
+			
 		}
+		
 		B b = Ion.with(getApplicationContext())
         .load(modelInfo.getApkUrl());//
 		b.group(downloadGroup) ;
@@ -854,9 +924,11 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	    		msgMessage.obj = number_progress_bar ;
 	    		msgMessage.arg1 =  Integer.valueOf(result.replaceAll("%", ""));
 	    		msgMessage.arg2 = 100 ;//(int)total ;
-	    		handler.sendMessage(msgMessage);
-	           // System.out.println("result = " + result);
-	           // System.out.println("" + downloaded + " / " + total);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putLong("downloaded", downloaded);
+	    		bundle.putLong("total", total);
+	    		msgMessage.setData(bundle);
+	    		handler.sendMessageDelayed(msgMessage,1000);
 	        }
 	     })
 	     .write(new File(downloadPathString))
@@ -875,8 +947,13 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	@Override
 	public void onProgressChange(int current, int max) {
 		if(current == max){
-			EasyLog.e(current+"=========="+max);
-			handler.obtainMessage(COMPLETE_DOWNLOAD_APK).sendToTarget();
+			if(null != dialogUploadImage){
+				dialogUploadImage.dismiss();
+			}
+			//EasyLog.e(current+"=========="+max);
+			//installApk(Uri.parse("file://" + APK_PATH));
+			
+			
 			if(!isForced){
 				//number_progress_bar.setVisibility(View.GONE);
 				isDownLoading = false ;
@@ -889,6 +966,18 @@ public class SkinRunMainActivity extends FragmentActivity implements
 				}*/
 				//installApkDialog(Uri.parse("file://" + APK_PATH));
 			}
+			handler.postDelayed(new Runnable() {
+				
+				@Override
+				public void run() {
+					Message msgMessage = new Message() ;
+					msgMessage.what = INSTALL_APK ;
+					//handler.obtainMessage(INSTALL_APK).sendToTarget();
+					handler.sendMessage(msgMessage);
+					
+				}
+			},1000);
+			
 			
 		}
 		
@@ -896,9 +985,10 @@ public class SkinRunMainActivity extends FragmentActivity implements
 	}
 	
 	private void installApk(Uri data) {
+		
 		if (!isForced) {
 			Intent i = new Intent(Intent.ACTION_VIEW);
-			i.setDataAndType(data, "application/vnd.android.package-archive");
+			i.setDataAndType(Uri.parse("file://" + APK_PATH), "application/vnd.android.package-archive");
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			this.startActivity(i);
 		} else {

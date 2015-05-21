@@ -1172,8 +1172,8 @@ public class MineFrag extends Fragment implements OnClickListener,
 			}// 否则赋予默认值
 			   
 			String integral = ACache.get(getActivity()).getAsObject("integral")+"";
-			Log.e(TAG, "integral = "+this.entity.getIntegral());
-			Log.e(TAG, "level = "+StringUtil.getLevel(this.entity.getIntegral()));
+			//Log.e(TAG, "integral = "+this.entity.getIntegral());
+			//Log.e(TAG, "level = "+StringUtil.getLevel(this.entity.getIntegral()));
 			level.setText(""+StringUtil.getLevel(Integer.valueOf(integral==null||"null".equals(integral)|| "".equals(integral)?"0":integral)));
 			String home_title_str = getResources().getString(
 					R.string.mine_title_name);

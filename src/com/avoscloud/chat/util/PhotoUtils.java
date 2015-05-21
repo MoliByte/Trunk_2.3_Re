@@ -535,7 +535,7 @@ public class PhotoUtils {
 	public static DisplayImageOptions normalImageOptions = new DisplayImageOptions.Builder()
 			.showImageOnLoading(R.drawable.empty_photo)
 			.showImageForEmptyUri(R.drawable.empty_photo)
-			.showImageOnFail(R.drawable.image_load_fail).cacheInMemory(true)
+			.showImageOnFail(R.drawable.empty_photo).cacheInMemory(true)
 			.cacheOnDisc(true).considerExifParams(true)
 			.imageScaleType(ImageScaleType.EXACTLY)
 			.bitmapConfig(Config.RGB_565).resetViewBeforeLoading(true)// 设置图片在下载前是否重置，复位

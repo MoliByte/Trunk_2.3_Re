@@ -338,7 +338,7 @@
 	<View
 		android:layout_width="match_parent"
 		android:layout_height="15dip"
-		android:background="#cccc" />
+		android:background="#55adadad" />
 	
 	<RelativeLayout
 		android:layout_width="match_parent"
