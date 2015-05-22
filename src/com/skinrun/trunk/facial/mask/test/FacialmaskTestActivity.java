@@ -251,14 +251,20 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 		audioProcess.stop();
 		resetVolume(); // 恢复音量
 		mSoundPool.release();
+		
+		handler.removeCallbacks(runnable);
+		savaRecord();
 	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
+		initLastTest();
 		init();
 		initData();
 	}
+	
+	
 
 	@Override
 	protected void onDestroy() {
@@ -269,13 +275,12 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 	@Override
 	protected void onStop() {
 		super.onStop();
-		handler.removeCallbacks(runnable);
-		savaRecord();
+		
 	}
 	@Override
 	protected void onStart() {
 		super.onStart();
-		initLastTest();
+		
 	}
 	private void init() {
 		mSoundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 5);
@@ -392,7 +397,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 			}
 		};
 	}
-	
+	/*
+	 * 是否保存测试值
+	 */
 	private void isSaveValue(final TextView tv,final TextView tv2,final float value,final int step){
 		final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(FacialmaskTestActivity.this);
 		
@@ -422,7 +429,7 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 							
 							break;	
 						case FacialDuration.M3:
-							waterNum2=value;
+							waterNum3=value;
 							
 							break;
 						case FacialDuration.M4:

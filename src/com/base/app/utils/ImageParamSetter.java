@@ -6,7 +6,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 
 import com.app.base.init.MyApplication;
-
+/**
+ * 
+ * @author zhupei
+ * abandoned
+ */
 public class ImageParamSetter {
 	private static Point point=MyApplication.screenSize;
 	

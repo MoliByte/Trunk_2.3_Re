@@ -16,7 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-public class CleanCacheTask extends AsyncTask<Void, Integer, Void> {
+public class CleanCacheTask extends AsyncTask<Void, Integer, Boolean> {
 	private TextView tv;
 	private Context context;
 	private static String TAG="CleanCacheTask";
@@ -28,7 +28,7 @@ public class CleanCacheTask extends AsyncTask<Void, Integer, Void> {
 	}
 
 	@Override
-	protected Void doInBackground(Void... arg0) {
+	protected Boolean doInBackground(Void... arg0) {
 		FileUtil fileUtil=new FileUtil(context);
 		String cacheName=fileUtil.getImageStorageDirectory();
 		
@@ -75,8 +75,30 @@ public class CleanCacheTask extends AsyncTask<Void, Integer, Void> {
 			
 		}
 		
+		boolean flag = false ;
 		
-		return null;
+		try {
+			//删除
+			File imageCacheFile = new File(AppBaseUtil.DEFAULT_CACHE_FOLDER);
+			File[] imFiles = imageCacheFile.listFiles() ;
+			for (int i = 0; i < imFiles.length; i++) {
+				imFiles[i].delete();
+			}
+			
+			File downloadFile = new File(AppBaseUtil.APK_DOWNLOAD);
+			File[] downloadFiles = downloadFile.listFiles() ;
+			
+			for (int i = 0; i < downloadFiles.length; i++) {
+				downloadFiles[i].delete();
+			}
+			
+			flag = true ;
+		} catch (Exception e) {
+			flag = false ;
+		}
+		
+		
+		return flag;
 	}
 	
 	@Override
@@ -86,17 +108,15 @@ public class CleanCacheTask extends AsyncTask<Void, Integer, Void> {
 		tv.setText("已经清除："+a+"%");
 	}
 	@Override
-	protected void onPostExecute(Void result) {
-		super.onPostExecute(result);
-		
+	protected void onPostExecute(Boolean result) {
 		new Handler().postDelayed(new Runnable() {
-			
 			@Override
 			public void run() {
 				tv.setText("缓存清除完成");
 				dialogUploadImage.dismiss();
 			}
 		}, 1000);
+		super.onPostExecute(result);
 	}
 	@Override
 	protected void onPreExecute() {
