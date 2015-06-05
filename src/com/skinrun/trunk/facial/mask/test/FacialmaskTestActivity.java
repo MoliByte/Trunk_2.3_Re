@@ -87,7 +87,7 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 	
 	private boolean isFinish=false;
 	//测试id
-	private int sid,reply;
+	private int sid;
 	
 	private Runnable runnable = new Runnable() {
 
@@ -232,9 +232,6 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 		MyApplication.getInstance().addActivity(this);
 		super.onCreate(savedInstanceState);
 		
-		reply=getIntent().getIntExtra("REPLY", 0);
-		
-		
 		postFacialTestRecordService=new PostFacialTestRecordService(this, HttpTagConstantUtils.UPLOAD_FACIAL_TESTNUM, this);
 		setContentView(R.layout.facialmasktest);
 		initView();
@@ -367,27 +364,7 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 					
 					judgeDuration(fWater);
 					
-					
-					try{
-						if(facialComparaEntity!=null){
-							sid=facialComparaEntity.getSid();
-						}
-						
-						UpLoadImagePathEntity u=SavaUpLoadImagePathUtil.get(DBService.getUserEntity().getToken());
-						String imageUrl="";
-						if(u!=null){
-							imageUrl=u.getImageUrl();
-						}
-						postFacialTestRecordService.postRecord(DBService.getUserEntity().getToken(), fWater, 0,
-								selectedProduct.getProductId(), reply, sid,imageUrl);
-					}catch(Exception e){
-						
-					}
-					
 					handler.removeCallbacks(runnable);
-					
-					
-					Log.e(TAG, "===========handler");
 					handler.postDelayed(runnable, 5000);
 
 					break;
@@ -397,6 +374,25 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 			}
 		};
 	}
+	
+	private void upLoadValue(float fWater,int status,int reply){
+		try{
+			if(facialComparaEntity!=null){
+				sid=facialComparaEntity.getSid();
+			}
+			
+			UpLoadImagePathEntity u=SavaUpLoadImagePathUtil.get(DBService.getUserEntity().getToken());
+			String imageUrl="";
+			if(u!=null){
+				imageUrl=u.getImageUrl();
+			}
+			postFacialTestRecordService.postRecord(DBService.getUserEntity().getToken(), fWater, 0,
+					selectedProduct.getProductId(),status, reply, sid,imageUrl);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	/*
 	 * 是否保存测试值
 	 */
@@ -415,6 +411,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 					
 					@Override
 					public void onClick(View arg0) {
+						
+						upLoadValue(value,0,1);
+						
 						tv.setText(String.format("%1.1f", value)+"%");
 						tv2.setText(String.format("%1.1f", value)+"%");
 						dialogBuilder.dismiss();
@@ -466,6 +465,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 			tvFacialResult1.setText(String.format("%1.1f", waterNum1)+"%");
 			textViewTestStep.setText("面膜时间");
 			textViewFacialResult.setText(String.format("%1.1f", waterNum1)+"%");
+			
+			upLoadValue(waterValue,1,0);
+			
 			return;
 		}
 		long now=System.currentTimeMillis();
@@ -484,6 +486,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 				tvFacialResult1.setText(String.format("%1.1f", waterNum1)+"%");
 				textViewTestStep.setText("面膜时间");
 				textViewFacialResult.setText(String.format("%1.1f", waterNum1)+"%");
+				
+				upLoadValue(waterValue,1,0);
+				
 			}else{
 				isSaveValue(textViewFacialResult,tvFacialResult1, waterValue, FacialDuration.M1);
 			}
@@ -502,6 +507,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 				textViewTestStep.setText("即时补水");
 				textViewFacialResult.setText(String.format("%1.1f", waterNum2)+"%");
 				setSeekProgress(waterNum);
+				
+				upLoadValue(waterValue,0,0);
+				
 			}else{
 				isSaveValue(textViewFacialResult,tvFacialResult2, waterValue,  FacialDuration.M2);
 			}
@@ -521,6 +529,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 				textViewTestStep.setText("持续补水");
 				textViewFacialResult.setText(String.format("%1.1f", waterNum3)+"%");
 				setSeekProgress(waterNum);
+				
+				upLoadValue(waterValue,0,0);
+				
 			}else{
 				isSaveValue(textViewFacialResult,tvFacialResult3, waterValue,  FacialDuration.M3);
 			}
@@ -538,6 +549,9 @@ public class FacialmaskTestActivity extends Activity implements OnClickListener,
 				textViewTestStep.setText("长效补水");
 				textViewFacialResult.setText(String.format("%1.1f", waterNum4)+"%");
 				setSeekProgress(waterNum);
+				
+				upLoadValue(waterValue,0,0);
+				
 			}else{
 				isSaveValue(textViewFacialResult, tvFacialResult4,waterValue,  FacialDuration.M4);
 			}

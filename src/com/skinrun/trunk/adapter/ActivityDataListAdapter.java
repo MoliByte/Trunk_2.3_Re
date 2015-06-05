@@ -13,8 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.app.base.entity.ActivityDataEntity;
 import com.avoscloud.chat.service.UserService;
 import com.avoscloud.chat.util.PhotoUtils;
@@ -27,12 +25,10 @@ public class ActivityDataListAdapter extends BaseAdapter {
 	private ArrayList<ActivityDataEntity> arrayList;
 	private Context context;
 	private LayoutInflater layoutInflater;
-	 RequestQueue mQueue ; 
 	public ActivityDataListAdapter(ArrayList<ActivityDataEntity> list, Context c) {
 		arrayList = list;
 		context = c;
 		layoutInflater = LayoutInflater.from(context) ;
-		mQueue = Volley.newRequestQueue(context);
 	}
 
 	@Override

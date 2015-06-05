@@ -53,6 +53,8 @@ public class GetTestNewsService implements HttpAysnTaskInterface{
 			StringEntity bodyEntity = new StringEntity(param.toString(),"UTF-8");
 			HttpClientUtils client = new HttpClientUtils();
 			
+			Log.e(TAG, "============我的测试消息请求参数："+param.toString()+"  Token:"+token);
+			
 			client.post_with_head_and_body(context, mTag, url, mapHead, bodyEntity, this);
 			
 		}catch(Exception e){
@@ -64,6 +66,7 @@ public class GetTestNewsService implements HttpAysnTaskInterface{
 	public void requestComplete(Object tag, int statusCode, Object header,
 			Object result, boolean complete) {
 		callback.dataCallBack(tag, statusCode, parse(result.toString()));
+		Log.e(TAG, "============我的测试消息返回："+result.toString());
 	}
 	
 	private ArrayList<TestNewsEntity> parse(String json){
@@ -103,9 +106,11 @@ public class GetTestNewsService implements HttpAysnTaskInterface{
 			
 		} catch (JSONException e) {
 			e.printStackTrace();
+			Log.e(TAG, "=======测试消息解析异常");
 			return null;
 		}catch(Exception e){
 			e.printStackTrace();
+			Log.e(TAG, "=======测试消息解析异常");
 			return null;
 		}
 	}

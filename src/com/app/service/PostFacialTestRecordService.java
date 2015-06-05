@@ -30,7 +30,7 @@ public class PostFacialTestRecordService implements HttpAysnTaskInterface{
 		this.callback = callback;
 	}
 
-	public void postRecord(String token,float water,int brandid,int productid,int reply,int sid,String pro_image){
+	public void postRecord(String token,float water,int brandid,int productid,int status,int reply,int sid,String pro_image){
 		try{
 			if(!SystemTool.checkNet(context)){
 				AppToast.toastMsgCenter(context, context.getResources().getString(R.string.no_network)).show();
@@ -41,6 +41,7 @@ public class PostFacialTestRecordService implements HttpAysnTaskInterface{
 			param.put("water", water);
 			param.put("brandid", brandid);
 			param.put("productid", productid);
+			param.put("status", status);
 			param.put("reply", reply);
 			param.put("sid", sid);
 			param.put("pro_image", pro_image);
@@ -61,8 +62,7 @@ public class PostFacialTestRecordService implements HttpAysnTaskInterface{
 	public void requestComplete(Object tag, int statusCode, Object header,
 			Object result, boolean complete) {
 		callback.dataCallBack(tag, statusCode, parse(result.toString()));
-		Log.e("PostFacialTestRecordService", "============状态吗："+statusCode);
-		Log.e("PostFacialTestRecordService", "============："+result.toString());
+		Log.e("PostFacialTestRecordService", "============提交面膜测试数据返回状态吗："+statusCode);
 		new ParserIntegral(context).parse(result.toString());
 		
 	}

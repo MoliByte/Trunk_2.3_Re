@@ -168,5 +168,8 @@
         <item name="android:scrollbarThumbVertical">@drawable/base_list_scrollbar_handle</item>
     </style>
 
-
+    <style name="Theme.UMDialog" parent="android:style/Theme.Dialog">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+	</style>
 </resources>

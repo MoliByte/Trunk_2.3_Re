@@ -10,13 +10,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.app.base.entity.SuggestionFeedBackDataEntity;
 import com.app.base.init.ACache;
 import com.avoscloud.chat.service.UserService;
 import com.avoscloud.chat.util.PhotoUtils;
-import com.base.service.impl.HttpClientUtils;
 import com.beabox.hjy.tt.R;
 import com.idongler.widgets.CircleImageView;
 
@@ -25,12 +22,10 @@ public class SuggestionFeedBackAdapter extends BaseAdapter {
 	private ArrayList<SuggestionFeedBackDataEntity> arrayList;
 	private Context context;
 	private LayoutInflater layoutInflater;
-	 RequestQueue mQueue ; 
 	public SuggestionFeedBackAdapter(ArrayList<SuggestionFeedBackDataEntity> list, Context c) {
 		arrayList = list;
 		context = c;
 		layoutInflater = LayoutInflater.from(context) ;
-		mQueue = Volley.newRequestQueue(context);
 	}
 
 	@Override

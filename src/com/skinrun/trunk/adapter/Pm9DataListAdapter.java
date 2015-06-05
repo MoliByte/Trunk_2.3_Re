@@ -11,13 +11,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.app.base.entity.Pm9HistoryDataEntity;
 import com.avoscloud.chat.service.UserService;
 import com.avoscloud.chat.util.PhotoUtils;
 import com.base.app.utils.StringUtil;
-import com.base.service.impl.HttpClientUtils;
 import com.beabox.hjy.tt.R;
 
 public class Pm9DataListAdapter extends BaseAdapter {
@@ -25,12 +22,10 @@ public class Pm9DataListAdapter extends BaseAdapter {
 	private ArrayList<Pm9HistoryDataEntity> arrayList;
 	private Context context;
 	private LayoutInflater layoutInflater;
-	 RequestQueue mQueue ; 
 	public Pm9DataListAdapter(ArrayList<Pm9HistoryDataEntity> list, Context c) {
 		arrayList = list;
 		context = c;
 		layoutInflater = LayoutInflater.from(context) ;
-		mQueue = Volley.newRequestQueue(context);
 	}
 
 	@Override
